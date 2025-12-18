@@ -1,0 +1,137 @@
+
+.main{
+    /* Rectangle 24065 */
+    width: 100%;
+    max-width: 4000px;
+    height: 100vh;
+    overflow: hidden;
+}
+.signIn-bg{
+    background: url(../images/signin-bg.png);
+    background-size: cover;
+}
+.signIn-content{
+    display: flex;
+    padding:15px;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+
+    @include media-breakpoint-up(md){
+        padding:0;
+        align-items: center;
+    }
+    
+    .signIn-box{
+        width: 556px;
+        padding:20px;
+        background-color: $white;
+        border-radius: 12px;
+        @include media-breakpoint-up(sm){
+            padding: 40px;
+        }
+        .signIn-header{
+            .logo-switcher{
+                display: flex;
+                flex-direction:column;
+                row-gap: 16px;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+                @include media-breakpoint-up(sm){
+                    flex-direction: row;
+                    row-gap: 0px;
+                    margin-bottom:32px;
+                }
+
+            }
+            h1{
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 22px;
+                margin-bottom: 12px;
+                color: rgba(13, 66, 97, 1);
+            }
+            p{
+                font-weight: 500;
+                font-size:14px;
+                margin-bottom: 16px;
+                @include media-breakpoint-up(sm){
+                    margin-bottom:32px;
+                }
+            }
+            
+        }
+        form, label, input{
+            width: 100%;
+        }
+        form{
+            label{
+                font-weight: 500;
+                font-size:15px;
+                color: $label-color;
+                margin-bottom: 8px;
+            }
+            .password-label{
+                position:relative;
+                .showpassword-icon{
+                    position:absolute;
+                    inset-inline-end: 20px;
+                    inset-block-start:44px;
+                    cursor:pointer;
+                    @include media-breakpoint-up(sm){
+                        inset-block-start:52px;
+                    }
+                }
+            }
+            input{
+                padding:10px 14px;
+                margin-bottom:16px;
+                border-radius:8px;
+                border: 1px solid $border-color;
+                @include media-breakpoint-up(sm){
+                    padding:18px 16px;
+                    
+                }
+                &:focus-visible{
+                    border:1px solid $border-active-color;
+                    outline: none;
+                }
+                &::placeholder{
+                    font-weight: 300;
+                    font-size: 16px;
+                    color: $placeholder-color;
+                }
+            }
+            .submit{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                button{
+                    font-weight: 500;
+                    font-size: 16px;
+                    padding:10px 30px;
+                    background-color: $button-bg;
+                    color: $white;
+                    border: 0;
+                    border-radius: 6px;
+
+                    @include media-breakpoint-up(sm){
+                        padding:19px 30px;
+                    }
+                }
+                a{
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+h1{
+    font-family: $inter;
+    font-weight: 400;
+  
+}

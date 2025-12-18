@@ -1,0 +1,297 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.leaders-state.bg-light 
+            include ../partials/_header
+            .dashboard-content
+                .history.position-relative
+                    .hide-show-menu.position-absolute 
+                        i.fa-solid.fa-angles-left
+                    .history-content 
+                        h3 HISTORY
+                        #accordionPanelsStayOpenExample.accordion
+                            .accordion-item
+                                h2#panelsStayOpen-headingOne.accordion-header
+                                button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseOne' aria-expanded='true' aria-controls='panelsStayOpen-collapseOne')
+                                    | Yesterday
+                                #panelsStayOpen-collapseOne.accordion-collapse.collapse.show(aria-labelledby='panelsStayOpen-headingOne')
+                                    .accordion-body
+                                        .accordion-item-countries.d-flex.border-0
+                                            img(src="assets/images/sa-02.png", alt="") 
+                                            span Saudi Arabia
+                                        .accordion-item-countries.d-flex.border-0 
+                                            img(src="assets/images/nz-02.png", alt="") 
+                                            span New Zealand
+                                        .accordion-item-countries.d-flex.border-0 
+                                            img(src="assets/images/qatar-02.png", alt="") 
+                                            span Qatar
+                                        .accordion-item-countries.d-flex.border-0 
+                                            img(src="assets/images/uae-02.png", alt="") 
+                                            span UAE
+                                        .accordion-item-countries.d-flex.border-0 
+                                            img(src="assets/images/india-02.png", alt="") 
+                                            span India
+                            .accordion-item
+                                h2#panelsStayOpen-headingTwo.accordion-header
+                                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseTwo' aria-expanded='false' aria-controls='panelsStayOpen-collapseTwo')
+                                    | Accordion Item #2
+                                #panelsStayOpen-collapseTwo.accordion-collapse.collapse(aria-labelledby='panelsStayOpen-headingTwo')
+                                    .accordion-body
+                                        strong This is the second item&apos;s accordion body.
+                                        |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                                        code .accordion-body
+                                        | , though the transition does limit overflow.
+                            .accordion-item
+                                h2#panelsStayOpen-headingThree.accordion-header
+                                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-collapseThree' aria-expanded='false' aria-controls='panelsStayOpen-collapseThree')
+                                    | Accordion Item #3
+                                #panelsStayOpen-collapseThree.accordion-collapse.collapse(aria-labelledby='panelsStayOpen-headingThree')
+                                    .accordion-body
+                                        strong This is the third item&apos;s accordion body.
+                                        |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                                        code .accordion-body
+                                        | , though the transition does limit overflow.
+                        //- select#history-select(style="width: 251px;")
+                        //-     option(value="us")
+                        //-         | Yesterday
+                        //-     option(value="uk" data-image="https://flagcdn.com/w20/fr.png")
+                        //-         | French
+                        //-     option(value="fr" data-image="https://flagcdn.com/w20/ar.png")
+                        //-         | Arabic      
+                .country-leader
+                    h1 Welcome 
+                    p.sub-heading We're glad to see you!
+                    .country-leader-content
+                        .tab-wrapper
+                            ul#pills-tab.nav.nav-pills(role='tablist')
+                                li.nav-item(role='presentation')
+                                    button#pills-home-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-home' type='button' role='tab' aria-controls='pills-home' aria-selected='true' disabled) Countries
+                                li.nav-item(role='presentation')
+                                    button#pills-profile-tab.nav-link.active(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false' disabled) Leaders
+                                        
+                        #pills-tabContent.tab-content
+                            #pills-home.tab-pane.fade.show(role='tabpanel' aria-labelledby='pills-home-tab')
+                                form(action="")
+                                    label Country Selected: United States
+                                    fieldset.position-relative 
+                                        img.position-absolute(src="assets/images/search.svg", alt="", srcset="")
+                                        input(type="text" placeholder="Search your country")
+                                    .checkbox-grid
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="qatarleader")
+                                                span.country-name President Of USA
+                                                input#qatarleader(type="checkbox", name="qatar")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="uaeleader")
+                                                span.country-name President Of USA
+                                                input#uaeleader(type="checkbox", name="uae")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="omanleader")
+                                                span.country-name President Of USA
+                                                input#omanleader(type="checkbox", name="oman")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="kuwaitleader")
+                                                span.country-name President Of USA
+                                                input#kuwaitleader(type="checkbox", name="kuwait")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="saleader")
+                                                span.country-name President Of USA
+                                                input#saleader(type="checkbox", name="sa")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="indialeader")
+                                                span.country-name President Of USA
+                                                input#indialeader(type="checkbox", name="india")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="srilankaleader")
+                                                span.country-name President Of USA
+                                                input#srilankaleader(type="checkbox", name="srilanka")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="australialeader")
+                                                span.country-name President Of USA
+                                                input#australialeader(type="checkbox", name="australia")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="newzealandleader")
+                                                span.country-name President Of USA
+                                                input#newzealandleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="chinaleader")
+                                                span.country-name President Of USA
+                                                input#chinaleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="russialeader")
+                                                span.country-name President Of USA
+                                                input#russialeader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="usaleader")
+                                                span.country-name President Of USA
+                                                input#usaleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="mexicoleader")
+                                                span.country-name President Of USA
+                                                input#mexicoleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="southafricaleader")
+                                                span.country-name President Of USA
+                                                input#southafricaleader(type="checkbox", name="southafrica")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="germanyleader")
+                                                span.country-name President Of USA
+                                                input#germanyleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="skleader")
+                                                span.country-name President Of USA
+                                                input#skleader(type="checkbox", name="southkorea")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/netherland-flag.png", alt="", srcset="")
+                                            label.country(for="hollandleader")
+                                                span.country-name President Of USA
+                                                input#hollandleader(type="checkbox", name="holland")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/vietnam-flag.png", alt="", srcset="")
+                                            label.country(for="vietnamleader")
+                                                span.country-name President Of USA
+                                                input#vietnamleader(type="checkbox", name="vietnam")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            label.country(for="presidentusa")
+                                                span.country-name President Of USA
+                                                input#presidentusa(type="checkbox", name="presidentusa")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            label.country(for="turkeyleader")
+                                                span.country-name President Of USA
+                                                input#turkeyleader(type="checkbox", name="turkey")
+                                    .next 
+                                        a.back-link(href="#")
+                                            i.fa-solid.fa-arrow-left
+                                            | Go Back To Homepage
+                                        .skip-next
+                                            a.next-btn(href="#") 
+                                                | skip   
+                                            a.next-btn(href="#") 
+                                                | Next   
+                            #pills-profile.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-profile-tab')
+                                form(action="")
+                                    label Country Selected: United States
+                                    fieldset.position-relative 
+                                        img.position-absolute(src="assets/images/search.svg", alt="", srcset="")
+                                        input(type="text" placeholder="Search your country")
+                                    .checkbox-grid
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                           
+                                            label.country(for="qatar")
+                                                span.country-name President Of USA
+                                                input#qatar(type="checkbox", name="qatar")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="uae")
+                                                span.country-name Minister of Foreign Affairs
+                                                input#uae(type="checkbox", name="uae")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="oman")
+                                                span.country-name Vice President Of USA
+                                                input#oman(type="checkbox", name="oman")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="kuwait")
+                                                span.country-name Vice President Of USA
+                                                input#kuwait(type="checkbox", name="kuwait")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="sa")
+                                                span.country-name Chief Executive Officer
+                                                input#sa(type="checkbox", name="sa")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="india")
+                                                span.country-name Chief Financial Officer
+                                                input#india(type="checkbox", name="india")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="srilanka")
+                                                span.country-name Mayor
+                                                input#srilanka(type="checkbox", name="srilanka")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="australia")
+                                                span.country-name Minister of Finance
+                                                input#australia(type="checkbox", name="australia")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="newzealand")
+                                                span.country-name Minister of Defense
+                                                input#newzealand(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="china")
+                                                span.country-name Governor
+                                                input#china(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            
+                                            label.country(for="russia")
+                                                span.country-name Minister of Transportation
+                                                input#russia(type="checkbox", name="minitertransport")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            label.country(for="ministerEducation")
+                                                span.country-name Minister of Education
+                                                input#ministerEducation(type="checkbox", name="unitedstate")
+                                    .next 
+                                        a.back-link(href="#")
+                                            i.fa-solid.fa-arrow-left
+                                            | Go Back To Homepage
+                                        a.next-btn(href="#") 
+                                            | Next   
+
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="assets/js/dashboard.js")
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+        script(type="importmap" defer).
+            {
+                "imports": {
+                    "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+                    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+                }
+            }
+        script(type="module" defer).
+            import * as bootstrap from 'bootstrap'
+            //- new bootstrap.Popover(document.getElementById('popoverButton'))
+
+        script.
+            $(function(){
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            })

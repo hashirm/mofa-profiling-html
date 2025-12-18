@@ -1,0 +1,409 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.bg-light 
+            include ../partials/_header
+            .dashboard-content
+                div
+                    .history.position-fixed
+                        .hide-show-menu.position-absolute 
+                            i.fa-solid.fa-angles-left
+                        .history-content.min-vh-100
+                            h3 Menu
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="dashboard.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/home-01.png", alt="", srcset="")  
+                                    span Dashboard 
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between.active(href="country-leader-profiling.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/story.png", alt="", srcset="")  
+                                    span Country & leader Profiling
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="designation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Designation
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="assignDesignation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Assign Designations
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="resources.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/resources.png", alt="", srcset="")  
+                                    span Resources
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leader-images.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/leader-images-icon.png", alt="", srcset="")  
+                                    span Profile Pictures
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="confidence-score.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/level.png", alt="", srcset="")  
+                                    span Confidence Score
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="roles.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/parameter-icon.png", alt="", srcset="")  
+                                    span Roles
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="users.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/user.png", alt="", srcset="")  
+                                    span Users
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")          
+                .country-leader
+                    nav(aria-label="breadcrumb")
+                        ol.breadcrumb.align-items-center 
+                            li.breadcrumb-item(aria-current="page")
+                                img(src="assets/images/dashboard-icon.png", alt="", srcset="")
+                                | Dashboard 
+                            li.breadcrumb-item.active(aria-current="page")
+                                | Country & Leader Profiling
+                    //- p.sub-heading We're glad to see!
+                    .country-leader-content
+                        .tab-wrapper
+                            ul#pills-tab.nav.nav-pills(role='tablist')
+                                li.nav-item(role='presentation')
+                                    button#pills-home-tab.nav-link.active(data-bs-toggle='pill' data-bs-target='#pills-home' type='button' role='tab' aria-controls='pills-home' aria-selected='true') Countries
+                                li.nav-item(role='presentation')
+                                    button#pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false') Leaders
+                                li.nav-item(role="presentation")
+                                    button.nav-link#pills-searchLeader-tab(data-bs-toggle="pill" data-bs-target="#pills-searchLeader" type="button" role="tab" aria-controls="pills-searchLeader" aria-selected="false" tabindex="-1")
+                                        | Search for a Leader 
+                                        
+                        #pills-tabContent.tab-content
+                            #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab')
+                                form(action="")
+                                    nav(aria-label="breadcrumb")
+                                        ol.breadcrumb 
+                                            li.breadcrumb-item.active   
+                                                a(href="#")
+                                                    label Country Profiling
+                                    fieldset.position-relative 
+                                        img.position-absolute(src="assets/images/search.svg", alt="", srcset="")
+                                        input(type="text" placeholder="Search your country")
+                                    .checkbox-grid
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/qa-flag.png", alt="", srcset="")
+                                            label.country(for="qatar")
+                                                span.country-name Qatar
+                                                input#qatar(type="checkbox", name="qatar")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/uae-flag.png", alt="", srcset="")
+                                            label.country(for="uae")
+                                                span.country-name UAE
+                                                input#uae(type="checkbox", name="uae")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/oman-flag.png", alt="", srcset="")
+                                            label.country(for="oman")
+                                                span.country-name Oman
+                                                input#oman(type="checkbox", name="oman")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/kuwait-flag.png", alt="", srcset="")
+                                            label.country(for="kuwait")
+                                                span.country-name Kuwait
+                                                input#kuwait(type="checkbox", name="kuwait")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/sa-flag.png", alt="", srcset="")
+                                            label.country(for="sa")
+                                                span.country-name Saudi Arabia
+                                                input#sa(type="checkbox", name="sa")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/india-flag.png", alt="", srcset="")
+                                            label.country(for="india")
+                                                span.country-name India
+                                                input#india(type="checkbox", name="india")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/srilanka-flag.png", alt="", srcset="")
+                                            label.country(for="srilanka")
+                                                span.country-name Srilanka
+                                                input#srilanka(type="checkbox", name="srilanka")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/australia-flag.png", alt="", srcset="")
+                                            label.country(for="australia")
+                                                span.country-name Australia
+                                                input#australia(type="checkbox", name="australia")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/newzealand-flag.png", alt="", srcset="")
+                                            label.country(for="newzealand")
+                                                span.country-name New Zealand
+                                                input#newzealand(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/china-flag.png", alt="", srcset="")
+                                            label.country(for="china")
+                                                span.country-name China
+                                                input#china(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/russia-flag.png", alt="", srcset="")
+                                            label.country(for="russia")
+                                                span.country-name Russia
+                                                input#russia(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/us.png", alt="", srcset="")
+                                            label.country(for="usa")
+                                                span.country-name USA
+                                                input#usa(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/mexico-flag.png", alt="", srcset="")
+                                            label.country(for="mexico")
+                                                span.country-name Mexico
+                                                input#mexico(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/rsa-flag.png", alt="", srcset="")
+                                            label.country(for="southafrica")
+                                                span.country-name South Africa
+                                                input#southafrica(type="checkbox", name="southafrica")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/germany-flag.png", alt="", srcset="")
+                                            label.country(for="germany")
+                                                span.country-name Germany
+                                                input#germany(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/southkorea-flag.png", alt="", srcset="")
+                                            label.country(for="sk")
+                                                span.country-name South Korea
+                                                input#sk(type="checkbox", name="southkorea")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/netherland-flag.png", alt="", srcset="")
+                                            label.country(for="holland")
+                                                span.country-name Netherlands
+                                                input#holland(type="checkbox", name="holland")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/vietnam-flag.png", alt="", srcset="")
+                                            label.country(for="vietnam")
+                                                span.country-name Vietnam
+                                                input#vietnam(type="checkbox", name="vietnam")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/thailand-flag.png", alt="", srcset="")
+                                            label.country(for="thailand")
+                                                span.country-name Thailand
+                                                input#thailand(type="checkbox", name="thailand")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/turkey-flag.png", alt="", srcset="")
+                                            label.country(for="turkey")
+                                                span.country-name Turkey
+                                                input#turkey(type="checkbox", name="turkey")
+                                    .next.justify-content-end
+                                        a.next-btn(href="#") 
+                                            | Next   
+                            #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab')
+                                form(action="")
+                                    nav(aria-label="breadcrumb")
+                                        ol.breadcrumb 
+                                            li.breadcrumb-item.active   
+                                                a(href="#")
+                                                    label Leader Profiling
+                                    fieldset.position-relative 
+                                        img.position-absolute(src="assets/images/search.svg", alt="", srcset="")
+                                        input(type="text" placeholder="Search your country")
+                                    .checkbox-grid
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/qa-flag.png", alt="", srcset="")
+                                            label.country(for="qatarleader")
+                                                | Qatar
+                                                input#qatarleader(type="checkbox", name="qatar")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/uae-flag.png", alt="", srcset="")
+                                            label.country(for="uaeleader")
+                                                | UAE
+                                                input#uaeleader(type="checkbox", name="uae")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/oman-flag.png", alt="", srcset="")
+                                            label.country(for="omanleader")
+                                                | Oman
+                                                input#omanleader(type="checkbox", name="oman")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/kuwait-flag.png", alt="", srcset="")
+                                            label.country(for="kuwaitleader")
+                                                | Kuwait
+                                                input#kuwaitleader(type="checkbox", name="kuwait")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/sa-flag.png", alt="", srcset="")
+                                            label.country(for="saleader")
+                                                | Saudi Arabia
+                                                input#saleader(type="checkbox", name="sa")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/india-flag.png", alt="", srcset="")
+                                            label.country(for="indialeader")
+                                                | India
+                                                input#indialeader(type="checkbox", name="india")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/srilanka-flag.png", alt="", srcset="")
+                                            label.country(for="srilankaleader")
+                                                | Srilanka
+                                                input#srilankaleader(type="checkbox", name="srilanka")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/australia-flag.png", alt="", srcset="")
+                                            label.country(for="australialeader")
+                                                | Australia
+                                                input#australialeader(type="checkbox", name="australia")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/newzealand-flag.png", alt="", srcset="")
+                                            label.country(for="newzealandleader")
+                                                | New Zealand
+                                                input#newzealandleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/china-flag.png", alt="", srcset="")
+                                            label.country(for="chinaleader")
+                                                | China
+                                                input#chinaleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/russia-flag.png", alt="", srcset="")
+                                            label.country(for="russialeader")
+                                                | Russia
+                                                input#russialeader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/us.png", alt="", srcset="")
+                                            label.country(for="usaleader")
+                                                | USA
+                                                input#usaleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/mexico-flag.png", alt="", srcset="")
+                                            label.country(for="mexicoleader")
+                                                | Mexico
+                                                input#mexicoleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/rsa-flag.png", alt="", srcset="")
+                                            label.country(for="southafricaleader")
+                                                | South Africa
+                                                input#southafricaleader(type="checkbox", name="southafrica")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/germany-flag.png", alt="", srcset="")
+                                            label.country(for="germanyleader")
+                                                | Germany
+                                                input#germanyleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/southkorea-flag.png", alt="", srcset="")
+                                            label.country(for="skleader")
+                                                | South Korea
+                                                input#skleader(type="checkbox", name="southkorea")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/netherland-flag.png", alt="", srcset="")
+                                            label.country(for="hollandleader")
+                                                | Netherlands
+                                                input#hollandleader(type="checkbox", name="holland")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/vietnam-flag.png", alt="", srcset="")
+                                            label.country(for="vietnamleader")
+                                                | Vietnam
+                                                input#vietnamleader(type="checkbox", name="vietnam")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/thailand-flag.png", alt="", srcset="")
+                                            label.country(for="thailandleader")
+                                                | Thailand
+                                                input#thailandleader(type="checkbox", name="thailand")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/turkey-flag.png", alt="", srcset="")
+                                            label.country(for="turkeyleader")
+                                                | Turkey
+                                                input#turkeyleader(type="checkbox", name="turkey")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/rsa-flag.png", alt="", srcset="")
+                                            label.country(for="southafricaleader")
+                                                | South Africa
+                                                input#southafricaleader(type="checkbox", name="southafrica")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/germany-flag.png", alt="", srcset="")
+                                            label.country(for="germanyleader")
+                                                | Germany
+                                                input#germanyleader(type="checkbox", name="unitedstate")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/southkorea-flag.png", alt="", srcset="")
+                                            label.country(for="skleader")
+                                                | South Korea
+                                                input#skleader(type="checkbox", name="southkorea")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/netherland-flag.png", alt="", srcset="")
+                                            label.country(for="hollandleader")
+                                                | Netherlands
+                                                input#hollandleader(type="checkbox", name="holland")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/vietnam-flag.png", alt="", srcset="")
+                                            label.country(for="vietnamleader")
+                                                | Vietnam
+                                                input#vietnamleader(type="checkbox", name="vietnam")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/thailand-flag.png", alt="", srcset="")
+                                            label.country(for="thailandleader")
+                                                | Thailand
+                                                input#thailandleader(type="checkbox", name="thailand")
+                                        fieldset.checkbox-wrapper.country-checkbox
+                                            img(src="assets/images/turkey-flag.png", alt="", srcset="")
+                                            label.country(for="turkeyleader")
+                                                | Turkey
+                                                input#turkeyleader(type="checkbox", name="turkey")
+                                    .next.justify-content-end
+                                        a.next-btn(href="#") 
+                                            | Next    
+                            #pills-searchLeader.tab-pane.fade(role="tabpanel" aria-labelledby="pills-searchLeader-tab")
+                                form#leaderSearchForm(method="get" action="/LeaderProfiles/GetLeaderProfilesDetailsByAI")
+                                    label
+                                        | Type in the leader/designation name..
+                                    fieldset.position-relative 
+                                        img(class="position-absolute" src="/assets/images/search.svg", alt="", srcset="")
+                                        input(id="searchInput" type="text" name="searchKeyWord")
+                                    span.info-skip 
+                                        b Note 
+                                        ul 
+                                            li 
+                                                b Criteria: 
+                                                span.info-skip You can search for 1 leader or 1 designation at a time
+                                            li
+                                                b Search Category: 
+                                                span.info-skip You can search for any famour personalities such as a leader, a politician, a businessman, a sportsman, etc.
+                                            li
+                                                b Search Example 
+                                                span.info-skip 
+                                                    | Foreign Minister Qatar, UAE PM, CEO Microsoft, CEO Qatar Rail 
+                                        br
+                                        .next.justify-content-start.mt-0
+                                            button.next-btn(type="submit")
+                                                | Search 
+                                        
+
+                                            
+
+                                
+
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="assets/js/dashboard.js")
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+        script(type="importmap" defer).
+            {
+                "imports": {
+                    "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+                    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+                }
+            }
+        script(type="module" defer).
+            import * as bootstrap from 'bootstrap'
+            //- new bootstrap.Popover(document.getElementById('popoverButton'))
+
+        script.
+            $(function(){
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            })

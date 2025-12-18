@@ -1,0 +1,55 @@
+//font-family: "Roboto", sans-serif;
+
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter_24pt-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter_24pt-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter_24pt-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter_24pt-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter_24pt-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+$inter:'inter';
+
+
+
+:root {
+    --primary-font: "inter", sans-serif;
+}
+
+/* Group 49137 */
+
+
+

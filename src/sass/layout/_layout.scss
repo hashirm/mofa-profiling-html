@@ -1,0 +1,523 @@
+.dashboard{
+   
+
+    .dashboard-content{
+        display: grid;
+        grid-template-columns: 315px auto;
+        transition: grid-template-columns 500ms ease;
+        height: 100%;
+        @media (min-width:1900px){
+            height: auto;
+        }
+
+        @include media-breakpoint-down(xl){
+            grid-template-columns: auto;
+        }
+        
+    }
+
+    .country-name{
+        display: block;
+        -webkit-line-clamp:1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: auto;
+        max-width: 215px;
+    }
+
+    .history{
+        height: 100%;
+        background: url(../images/vertical-menu-bg.png);
+        background-size:cover;
+        background-repeat: no-repeat;
+        width: 315px;
+        transition:width 500ms ease;
+    
+        .history-content{
+            overflow: hidden;
+            padding: 50px 32px;
+            h3{
+                color: $light-white;
+                font-weight: 600;
+                font-size:14px;
+                padding: 10px 30px;
+            }
+            .accordion-button{
+                background-color: rgb(0,0,0, 0.58);
+                color: white;
+                box-shadow: none;
+                border-radius: 12px;
+                margin-bottom:12px;
+                &::after{
+                    background-image: url(../images/down.svg);
+                }
+            }
+            .accordion-body{
+                padding:0 16px;
+            }
+            .accordion-item-countries{
+                padding: 12px 0;
+                column-gap: 12px;
+            }
+            .accordion-item{
+                background-color: transparent;
+                color: $white;
+                border: none;
+            }
+        }
+        .hide-show-menu{
+            top:36px;
+            background-color: $round-btn-bg;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            inset-inline-end: -18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            i.change-dir{
+                transform:rotate(180deg);
+            }
+        }
+    }
+    
+
+    .history.hide{
+        width:23px;
+        @include media-breakpoint-up(sm){
+            width: 60px;
+        }
+    }
+
+    .country-leader{
+        padding:24px 22px 24px 22px;
+        @include media-breakpoint-up(xl){
+            padding: 54px 37px;
+
+        }
+        @include media-breakpoint-between(sm, xl){
+            padding: 50px 25px 50px 25px;
+        }
+
+
+        h1{
+            font-weight: 600;
+            font-size: 36px;
+            color: $black;
+        }
+        .sub-heading{
+            font-weight: 400;
+            font-size: 18px;
+            color: $sub-heading;
+        }
+        .country-leader-content{
+            max-width: 100%;
+            padding:12px;
+            background-color: $white;
+            border-radius: 18px;
+            @include media-breakpoint-up(sm){
+                padding: 32px;
+            }
+          
+            .tab-wrapper{
+                background-color: $bg-light;
+                padding: 10px;
+                border-radius: 24px;
+                margin-bottom:22px;
+            }
+
+            .nav-pills{
+                justify-content: space-between;
+                li{
+                    width: 33.33%;
+                }
+            }
+            .nav-link{
+                font-size: 16px;
+                font-weight: 600;
+                padding:16px 0;
+                width: 100%;
+                max-width: 100%;
+                background: $bg-light; 
+                color: $black;
+
+                @include media-breakpoint-up(sm){
+                    font-size: 20px;
+                   
+                }
+
+            }
+            .nav-link.active{
+                color: white;
+                background-color: black;
+                border-radius: 12px;
+            }
+
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                label{
+                    font-weight: 500;
+                    font-size:18px;
+                    color: $label-color;
+                    margin-bottom: 8px;
+                   
+                }
+                .checkbox-grid{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+                    grid-template-rows: repeat(auto-fill, minmax(65px, auto));
+                    justify-content: center;
+                    grid-gap: 12px;
+                    height: 380px;
+                    overflow: auto;
+                    padding-inline-end: 4px;
+
+                    &::-webkit-scrollbar{
+                        width: 7px;
+                        margin:0 10px;
+                    }
+                    &::-webkit-scrollbar-track{
+                        border-radius: 15px;
+                        width: 7px;
+                        background: #DDE6E9;
+                    }
+                    &::-webkit-scrollbar-thumb{
+                        background: #a3a3a3;
+                        border-radius: 15px;
+                    }
+
+
+                    .country-checkbox{
+                        img{
+                            width:26px;
+                            height:26px;
+                            border-radius: 50%;
+                            border: 2px solid $white;
+
+                        }
+                    }
+                }
+
+                fieldset{
+                    width: 100%;
+                    position: relative;
+                    img{
+                        position: absolute;
+                        inset-block-start:20px;
+                        inset-inline-start:20px;
+                    }
+                    label.country{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        column-gap: 12px;
+                        width: 100%;
+                        max-width: 100%;
+                        font-weight: 400;
+                        font-size: 18px;
+                        padding:18px 16px 18px 58px;
+                        border: 1px solid $border-color;
+                        border-radius: 16px;
+                        cursor: pointer;
+                        margin-bottom: 0;
+
+                    }
+                    input{
+                        width: 100%;
+                        padding:18px 16px 18px 51px;
+                        margin-bottom:16px;
+                        border-radius:8px;
+                        border: 1px solid $border-color;
+                        &:focus-visible{
+                            border:1px solid $border-active-color;
+                            outline: none;
+                        }
+                        &::placeholder{
+                            font-weight: 300;
+                            font-size: 16px;
+                            color: $placeholder-color;
+                        }
+                    }
+                   
+                    input[type="checkbox"]{
+
+                        appearance: none;
+                        -webkit-appearance: none;
+                        position:relative;
+                        width: 24px;
+                        height: 24px;
+                        padding:0px;
+                        margin-bottom: 0;
+                        border-radius: 50%;
+                        border: 0;
+                        outline:none;
+                        cursor: pointer;
+                       
+                        
+                    }
+                    input[type="checkbox"]:checked{
+                        background-color: $white;
+                        width: 24px;
+                        height: 24px;
+                        
+                    }
+                   
+                    input[type="checkbox"]:checked::after{
+                        content: "✔";
+                        position: absolute;
+                        top: 0;
+                        inset-inline-start: 18%;
+                        transform: rotate(12deg);
+
+                    }
+                }
+                
+                
+            }
+
+
+        }
+        .country-leader-content.designation-columns, .country-leader-content.stateDesignation-columns{
+            form{
+                .checkbox-grid{
+                    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+
+                    @include media-breakpoint-down(sm){
+                        grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
+                    }
+                }
+            }
+        }
+
+    }
+    .next{
+        text-align: end;
+        //padding:15px 0 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 17px;
+        justify-content: space-between;
+        align-items: center;
+        @include media-breakpoint-up(sm){
+            flex-direction: row;
+            align-items: center;
+        }
+        .back-link{
+            display: flex;
+            column-gap: 14px;
+            align-items: center;
+            color: $maroon;
+            font-size:16px;
+            font-weight: 500;
+            
+        }
+        .textData{
+            font-weight: 500;
+        }
+        .info-icon{
+            border: 2px solid rgb(22, 22, 22);
+            border-radius: 50%;
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .accordion-button{
+            &::after{
+                margin-inline-end: 0;
+                --bs-accordion-btn-icon-width:1rem
+            }
+        }
+        .accordion-button:not(.collapsed){
+            background-color: transparent;
+            box-shadow: none;
+            padding-bottom:9px;
+            
+        }
+        .accordion-body{
+            padding-top:0;
+            ul{
+                li{
+                    a{
+                        color: rgba(13, 66, 97, 1);
+                        font-size: 14px;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+        .next-btn{  
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding:11px 30px;
+            background-color: $black;
+            color:$white;
+            border-radius: 8px;
+            border: 0;
+            @include media-breakpoint-up(sm){
+                padding:19px 30px;
+            }
+
+        }
+    }
+
+    .dashboard-content.wide{
+        grid-template-columns: 23px auto;
+        @include media-breakpoint-up(sm){
+            grid-template-columns: 60px auto;
+            
+        }
+    }
+}
+
+
+
+
+.aside-link {
+    color: white;
+    padding: 10px;
+    margin-bottom: 6px;
+}
+
+.aside-link.active {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+}
+
+@include media-breakpoint-down(lg){
+    .aside-link {
+        font-size: 12px;
+    }
+     .aside-link {
+        padding: 5px;
+    }
+    .aside-link.active {
+        border-radius: 5px;
+    }
+    
+}
+
+.table-content-wrapper{
+    overflow: hidden;
+}
+.table-content{
+    overflow-x: auto;
+}
+
+
+
+.dashboard .history {
+    height: 100%;
+    background: url(../images/vertical-menu-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 315px;
+    transition: width 500ms ease;
+    z-index: 99;
+
+}
+
+    .dashboard .history .history-content {
+        overflow: hidden;
+        padding: 50px 20px;
+    }
+
+        .dashboard .history .history-content h3, .dashboard .history .history-content .h3 {
+            color: rgba(255, 255, 255, 0.72);
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 30px;
+        }
+
+        html[dir="rtl"] .dashboard .history .history-content .aside-link img{
+            transform:scaleX(-1);
+        }
+
+        .dashboard .history .history-content .accordion-button {
+            background-color: rgba(0, 0, 0, 0.58);
+            color: white;
+            box-shadow: none;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+            .dashboard .history .history-content .accordion-button::after {
+                background-image: url(../images/accordion-arrow.png);
+            }
+
+        .dashboard .history .history-content .accordion-body {
+            padding: 0 16px;
+        }
+
+        .dashboard .history .history-content .accordion-item-countries {
+            padding: 12px 0;
+            -moz-column-gap: 12px;
+            column-gap: 12px;
+        }
+
+        .dashboard .history .history-content .accordion-item {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+        }
+
+    .dashboard .history .hide-show-menu {
+        top: 36px;
+        background-color: rgb(242, 242, 242);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        inset-inline-end: -18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+@media (max-width: 768px) {
+    .dashboard .history .hide-show-menu {
+        width: 30px;
+        height: 30px;
+        top: 62px;
+    }
+}
+
+
+        .dashboard .history .hide-show-menu i.change-dir {
+            transform: rotate(180deg);
+        }
+
+    .dashboard .history.hide {
+        width: 23px;
+    }
+
+@media (min-width: 576px) {
+    .dashboard .history.hide {
+        width: 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .dashboard .history {
+        width: 250px;
+    }
+}
+
+.dashboard .dashboard-content.wide {
+    grid-template-columns: 100%;
+}
+
+@media (min-width: 576px) {
+    .dashboard .dashboard-content.wide {
+        grid-template-columns: 60px auto;
+    }
+}

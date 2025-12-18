@@ -1,0 +1,58 @@
+/*confidence score progress bar css*/
+.confidence-score-slider .slider-box {
+    width: 343px;
+    margin: 0 auto
+}
+@media (max-width:599px){
+    .confidence-score-slider .slider-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.confidence-score-slider label, input {
+    border: none;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+    width: 68%
+}
+
+.confidence-score-slider input {
+    width: 30%
+}
+
+.confidence-score-slider .slider {
+    margin: 0 0 11px;
+}
+.confidence-score-slider .ui-widget-content {
+    height: 8px;
+}
+    .confidence-score-slider .ui-widget-content .ui-state-default {
+        border: 4px solid #fff;
+        background: #8A1538;
+        border-radius: 50%;
+        height: 28px;
+        width: 28px;
+        box-shadow: 0px 6px 12px 0px #1018281A;
+    }
+.confidence-score-slider .ui-widget-header {
+    background: #8A1538;
+}
+.confidence-score-slider .ui-slider-horizontal .ui-slider-handle {
+    top: -0.65rem;
+}
+
+
+.confidence-score-slider .slider-box {
+    width: 343px;
+    margin: 0 auto
+}
+@media (max-width:599px){
+    .confidence-score-slider .slider-box {
+        width: 92%;
+        margin: 0 auto;
+    }
+}
+
+/*--------------confidence score css end --------------*/

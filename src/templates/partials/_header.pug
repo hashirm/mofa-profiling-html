@@ -1,0 +1,286 @@
+header.bg-white
+    .logo
+        img(src="assets/images/logo-mofa.png", alt="", srcset="")
+    .notification-sec
+        .lang-notif 
+            select#country-select(style="width: 144px;")
+                option(value="us" data-image="assets/images/uk.png")
+                    | English
+                option(value="uk" data-image="assets/images/india-flag.png")
+                    | India
+                option(value="ar" data-image="assets/images/sa-flag.png")
+                    | Arabic
+            .userIcon.position-relative.d-block.d-sm-none   
+                img(src="assets/images/admin-user.png", alt="", srcset="")
+                .userright-box.bg-white.position-absolute.d-none 
+                    ul 
+                        li 
+                            a(href="") 
+                                | upated password 
+                        li
+                            a(href="") 
+                                | logout
+            .notification.notifications.position-relative
+                .notification-bill  
+                    a(href="#")
+                        svg(xmlns='http://www.w3.org/2000/svg' width='18' height='21' viewbox='0 0 18 21' fill='none')
+                            path(d='M6.33333 18.4659C7.04101 19.0312 7.97553 19.375 9 19.375C10.0245 19.375 10.959 19.0312 11.6667 18.4659M1.50763 15.5568C1.08602 15.5568 0.85054 14.8944 1.10557 14.5264C1.69736 13.6725 2.26855 12.4201 2.26855 10.912L2.29296 8.72666C2.29296 4.66645 5.29581 1.375 9 1.375C12.7588 1.375 15.8058 4.71493 15.8058 8.83495L15.7814 10.912C15.7814 12.4305 16.3329 13.6897 16.9006 14.544C17.1458 14.9129 16.9097 15.5568 16.4933 15.5568H1.50763Z' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+
+                    span.position-absolute.notification-tag#notification-topbar-all-unread 
+                        | 9+
+                .recent-searches.notification-box 
+                    .notifications-header 
+                        .header 
+                            h4 Notifications 
+                    ul.nav.nav-pills.notification-nav-pills.w-100.flex-nowrap#profiling-tabs(role="tablist")
+                        li.nav-item.w-50(role="presentation")
+                            button.w-100.nav-link.active#topbar-all-tab(data-bs-toggle="pill" data-bs-target="#topbar-all-pane" type="button" role="tab" aria-controls="topbar-all-pane" aria-selected="true")
+                                | All 
+                                span.notification-number#notification-topbar-number-all 
+                                    | 9+ 
+                        li.nav-item.w-100(role="presentation")
+                            button.w-100.nav-link#topbar-country-tab(data-bs-toggle="pill" data-bs-target="#topbar-country-pane" type="button" role="tab" aria-controls="topbar-country-pane" aria-selected="false")
+                                | Country Profiling 
+                                span.notification-number.d-none#notification-topbar-number-country 
+                        li.nav-item.w-100(role="presentation")
+                            button.w-100.nav-link#topbar-state-tab(data-bs-toggle="pill" data-bs-target="#topbar-state-pane" type="button" role="tab" aria-controls="topbar-state-pane" aria-selected="false")
+                                | State Profiling 
+                                span.notification-number.d-none#notification-topbar-number-state 
+                        li.nav-item.w-100(role="presentation")
+                            button.w-100.nav-link#topbar-leader-tab(data-bs-toggle="pill" data-bs-target="#topbar-leader-pane" type="button" role="tab" aria-controls="topbar-leader-pane" aria-selected="false")
+                                | Leader Profiling 
+                                span.notification-number#notification-topbar-number-leader 
+                                    | 9+
+                    #profiling-tabs-content.tab-content
+                        #topbar-all-pane.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='topbar-all-tab')
+                            // Dynamic country profiling content will go here
+                            .notification-items-wrapper
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p
+                                                | The Confidence Score is 25% for First Deputy Prime Minister of Tajikistan. Take a look.
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66937') Mark as read
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p
+                                                | The Confidence Score is 21% for Second Deputy Prime Minister of Tajikistan. Take a look.
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66936') Mark as read
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p Leader Not Found
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66935') Mark as read
+                        #topbar-country-pane.tab-pane.fade(role='tabpanel' aria-labelledby='topbar-country-pane')
+                            // Dynamic country profiling content will go here
+                            .notification-items-wrapper
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name CP
+                                        div
+                                            p Country Profiling
+                                            p A new data for Confidence Score has been updated for  on 07/21/2025.
+                                    .notif-action
+                                        span.notif-time 1 months ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63546') Mark as read
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name CP
+                                        div
+                                            p Country Profiling
+                                            p A new data for Confidence Score has been updated for  on 07/21/2025.
+                                    .notif-action
+                                        span.notif-time 1 months ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63545') Mark as read
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name CP
+                                        div
+                                            p Country Profiling
+                                            p A new data for Confidence Score has been updated for  on 07/21/2025.
+                                    .notif-action
+                                        span.notif-time 1 months ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63544') Mark as read
+                        #topbar-state-pane.tab-pane.fade(role='tabpanel' aria-labelledby='topbar-country-pane')
+                            // Dynamic state profiling content will go here
+                            .notification-items-wrapper
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name SP
+                                        div
+                                            p State Profiling
+                                            p A new data for SafetyIndex has been updated for La Rioja on 07/22/2025.
+                                    .notif-action
+                                        span.notif-time 28 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63829') Mark as read
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name SP
+                                        div
+                                            p State Profiling
+                                            p A new data for CorruptionIndex has been updated for La Rioja on 07/22/2025.
+                                        .notif-action
+                                            span.notif-time 28 days ago
+                                            .dropdown
+                                                button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                    img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                                ul.dropdown-menu
+                                                    li
+                                                        a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63828') Mark as read
+                                .notification-item.d-flex.justify-content-between.read
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name SP
+                                        div
+                                            p State Profiling
+                                            p A new data for Tiktok has been updated for La Rioja on 07/22/2025.
+                                    .notif-action
+                                        span.notif-time 28 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read.disabled(style='pointer-events: none; opacity: 0.6;' data-id='63827') Mark as read
+                        #topbar-leader-pane.tab-pane.fade(role='tabpanel' aria-labelledby='topbar-leader-pane')
+                            // Dynamic leader profiling content will go here
+                            .notification-items-wrapper
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p
+                                                | The Confidence Score is 25% for First Deputy Prime Minister of Tajikistan. Take a look.
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66937') Mark as read
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p
+                                                | The Confidence Score is 21% for Second Deputy Prime Minister of Tajikistan. Take a look.
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66936') Mark as read
+                                .notification-item.d-flex.justify-content-between
+                                    .notification-content.d-flex.align-items-start.gap-2
+                                        .d-flex.align-items-center.gap-1
+                                            span.pointed
+                                            .name-wrapper.d-flex.align-items-center
+                                                span.name LP
+                                        div
+                                            p Leader Profiling
+                                            p Leader Not Found
+                                    .notif-action
+                                        span.notif-time 23 days ago
+                                        .dropdown
+                                            button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                                img(src='/assets/images/three-dots-icon.png' alt='Options')
+                                            ul.dropdown-menu
+                                                li
+                                                    a.dropdown-item.mark-as-read(href='#' data-id='66935') Mark as read
+                    .view-all-notifications.position-sticky.bottom-0.bg-white 
+                        a.d-block.text-center(href="/Notification/index")
+                            | View all 
+        .admin.d-none.d-sm-flex 
+            img(src="assets/images/admin-user.png", alt="", srcset="")
+            select#two-line-select(style="width: 250px;")
+                option(value="1" data-subtext="MOFA Administration")
+                    | Ahmad
+                option(value="2" data-subtext="")
+                    | Update password
+                option(value="3" data-subtext="")
+                    | logout

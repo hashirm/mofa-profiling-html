@@ -1,0 +1,225 @@
+/*------------------ notification page -----------------*/
+
+
+
+
+
+.notifications{
+
+    .notification-nav-pills{
+            max-width:535px;
+            margin-bottom:0px;
+            padding:0 24px;
+        .nav-item{
+            button{
+                .notification-number{
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 24px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #F2F4F7;
+                    font-size: 12px;
+                    color: #00000099;
+                    margin-inline-start:8px;
+                }
+            } 
+
+            .nav-link{
+                    color: #64748B;
+                    padding:8px 0;
+                     font-size: 14px;
+                &.active{
+                    color: #1E293B;
+                    background:transparent;
+                }
+            }
+
+           
+        } 
+    } 
+
+
+    .notification-item{
+        padding: 24px;
+        padding-inline-start:10px;
+        border-bottom: 1px solid #8A15384D;
+
+        .review-btn{
+            background:#8A1538;
+            padding:6px 16px;
+            font-size:14px;
+            border:0;
+            position:relative;
+            width:100%;
+            max-width:97px;
+            text-align:start;
+        }
+
+
+        .review-btn::after{
+            content: "\203A";
+            color:#fff;
+            font-family:'FontAwesome';
+            position:absolute;
+            font-size:10px;
+            top:10px;
+            right:15px;
+        }
+
+        .notification-content{
+
+            .name-wrapper{
+                  width: 48px;
+                    height: 48px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: #8A15384D;
+                .name{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+
+            p{
+                margin-bottom: 3px;
+                font-size:12px;
+                b{
+                 color: #00000099;
+                }
+            }
+
+            .file{
+                img{
+                    margin-inline-end:8px;
+                }
+                .file-name{
+                     margin-inline-end: 5px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    line-height: 20px;
+                    color: #1E293B;
+                }
+
+                .file-size{
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #64748B;
+                    line-height:20px;
+                }
+            }
+            .pointed {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #8A1538;
+            }
+        } 
+    } 
+
+    .notification-item:nth-child(odd) {
+        background-color: #F9F3F5;
+    }
+
+} 
+
+
+
+
+
+.notifications{
+    .recent-searches{
+
+    .notifications-header{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        margin-bottom:18px;
+
+         .header{
+                    h4 {
+                        font-weight: 600;
+                        font-size: 20px;
+                        margin-bottom: 0px;
+                    }
+                }
+        a{
+            font-size: 14px;
+            font-weight: 500;
+            color: #8A1538;
+            text-decoration: none;
+        }
+    }
+
+
+
+
+        .tab-content{
+
+            .notif-action{
+                .dropdown{
+                     text-align:center;
+                } 
+                .btn {
+                        background: transparent;
+                        border: 0;
+                        padding: 0;
+                        &::after{
+                            display:none;
+                        }
+                    }
+            } 
+
+           .tab-pane{
+                .pagination-all-notifications{
+                     margin-top: 32px;
+                    nav{
+                        &.active{
+                            border-bottom: 3px solid #8A1538;
+                        }
+                        button{
+                            background-color: transparent;
+                            width: 40px;
+                            height: 42px;
+                            font-size: 15px;
+                            border-radius: 6px;
+                            border:0;
+                            &.active{       
+                                background-color: #8A1538;
+                                color: white;
+                                border-radius: 6px;
+                            }
+                        }
+                        
+                    }
+                }
+           }
+        } 
+    } 
+} 
+
+
+.bio-versions-wrapper.education-bio-versions {
+    position: absolute;
+    display: inline-block;
+    inset-inline-end: 55px;
+    top: 17px;
+    z-index: 444;
+}
+
+.bio-versions-wrapper {
+    position: relative;
+    z-index: 999;
+}
+
+.leader-about-content .bio-versions-wrapper{
+    z-index:1;
+}
+
+
+ 
+
+

@@ -1,0 +1,107 @@
+
+.mofa-cms-content.designation.assign-designation{
+    .recent-searches{
+            .country-state-designation{
+                .designation{
+                    .designation-content{
+                        .draggable-table{
+                            margin-top: 30px;
+                            margin-inline-end:14px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 98%;
+                            height: 50%;
+                            border-collapse: collapse;
+                            background: white;
+                            .designation-name {
+                                display: flex;
+                                align-items: center;
+                                -moz-column-gap: 12px;
+                                column-gap: 12px;
+                                font-weight: 500;
+                                color: rgba(0, 0, 0, 0.8);
+                                width: 477px;
+                                white-space: nowrap;
+                                span{
+                                    font-size: 15px;
+                                    strong{
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        } 
+                    } 
+                } 
+            } 
+
+    } 
+} 
+
+
+.draggable-table .draggable-table__drag {
+    font-size: 0.95em;
+    font-weight: lighter;
+    text-transform: capitalize;
+    position: absolute;
+    width: 100%;
+    text-indent: 50px;
+    border: 1px solid #f1f1f1;
+    z-index: 10;
+    cursor: grabbing;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.05);
+    opacity: 1;
+}
+
+    .draggable-table thead th {
+        height: 25px;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 10px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .draggable-table tbody tr {
+        cursor: grabbing;
+        display: block;
+        height: 58px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(214, 213, 213);
+        border-radius: 5px;
+    }
+
+        .draggable-table tbody tr td {
+            font-size: 0.95em;
+            font-weight: lighter;
+            text-transform: capitalize;
+            height: 58px;
+            padding: 14px 18px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+            .draggable-table tbody tr td .remove-icon {
+                position: relative;
+                top: 0px;
+                inset-inline-end: 0px;
+                z-index: 88;
+                cursor: pointer;
+            }
+
+            .draggable-table tbody tr td:nth-of-type(2) {
+                width: 100%;
+                text-align: end;
+            }
+
+        .draggable-table tbody tr.is-dragging {
+            background: rgba(138, 21, 56, 0.0784313725);
+        }
+
+            .draggable-table tbody tr.is-dragging td {
+                color: #ffe683;
+            }
+
+            

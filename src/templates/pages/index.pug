@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title MOFA
+    body
+        
+        .main.signIn-bg
+            .signIn-content
+                .signIn-box
+                    .signIn-header
+                        .logo-switcher
+                            img(src="assets/images/logo-mofa.png", alt="", srcset="")
+                            select#country-select(style="width: 144px;")
+                                option(value="us" data-image="assets/images/uk.png")
+                                    | English
+                                option(value="uk" data-image="assets/images/india-flag.png")
+                                    | India
+                                option(value="ar" data-image="assets/images/sa-flag.png")
+                                    | Arabic
+                        h1 Sign in to MOFA Dashboard
+                        p Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+                    form
+                        label.email-label Email Address 
+                        input(type="email" name="email" placeholder="Enter your email address")
+                        label.password-label Password
+                            img.showpassword-icon(src="assets/images/show-password.png", alt="", srcset="")
+                        input.password-textbox(type="password" name="password" placeholder="Enter your password")
+                        .submit
+                            button Continue
+                            a(href="") Forgot password
+            include ../partials/_footer      
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+     
+        script(src="assets/js/custom.js")
+        //- script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+        
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+        script(type="importmap").
+            {
+                "imports": {
+                    "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+                    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+                }
+            }
+        script(type="module").
+            import { Popover } from 'bootstrap';
+            //- new Popover(document.getElementById('popoverButton'))
+
+        script.
+            $(function(){
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            })

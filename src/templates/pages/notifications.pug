@@ -1,0 +1,216 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+        link(rel="stylesheet", href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css")
+
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.bg-light 
+            include ../partials/_header
+            .dashboard-content 
+                div 
+                    .history.position-fixed
+                        .hide-show-menu.position-absolute 
+                            i.fa-solid.fa-angles-left 
+                        .history-content.min-vh-100 
+                            h3 Menu 
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="dashboard.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/home-01.png", alt="", srcset="")  
+                                    span Dashboard 
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="country-leader-profiling.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/story.png", alt="", srcset="")  
+                                    span Country & leader Profiling
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="designation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Designation
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="assignDesignation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Assign Designations
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="resources.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/resources.png", alt="", srcset="")  
+                                    span Resources
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leader-images.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/leader-images-icon.png", alt="", srcset="")  
+                                    span Profile Pictures
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="confidence-score.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/level.png", alt="", srcset="")  
+                                    span Confidence Score
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="roles.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/parameter-icon.png", alt="", srcset="")  
+                                    span Roles
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="users.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/user.png", alt="", srcset="")  
+                                    span Users
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")  
+                .mofa-cms-content.designation.parameter.resources.notifications
+                    nav(aria-label="breadcrumb") 
+                        ol.breadcrumb.align-items-center 
+                            li.breadcrumb-item(aria-current="page")
+                                img(src="assets/images/dashboard-icon.png", alt="", srcset="")
+                                | Dashboard
+                            li.breadcrumb-item.active(aria-current="page")
+                                | Notifications
+                    .recent-searches
+                        .notifications-header
+                            .header
+                                h4 Notifications
+                            .read-action
+                                a#mark-all-as-read-Btn(href='javascript:void(0)') Mark All As Read
+                        ul#profiling-tabs.nav.nav-pills.notification-nav-pills.w-100.flex-nowrap(role='tablist')
+                            li.nav-item.w-50(role='presentation')
+                                button#all-tab.w-100.nav-link.active(data-type='all' data-bs-toggle='tab' data-bs-target='#all-pane' type='button' role='tab' aria-controls='all-pane' aria-selected='true')
+                                    | All
+                                    span#notification-number-all.notification-number 
+                                        | 9+
+                            li.nav-item.w-100(role='presentation')
+                                button#country-tab.w-100.nav-link(data-type='country' data-bs-toggle='tab' data-bs-target='#country-pane' type='button' role='tab' aria-controls='country-pane' aria-selected='false')
+                                    | Country Profiling
+                                    span#notification-number-country.notification-number.d-none
+                            li.nav-item.w-100(role='presentation')
+                                button#state-tab.w-100.nav-link(data-type='state' data-bs-toggle='tab' data-bs-target='#state-pane' type='button' role='tab' aria-controls='state-pane' aria-selected='false')
+                                    | State Profiling
+                                    span#notification-number-state.notification-number.d-none
+                            li.nav-item.w-100(role='presentation')
+                                button#leader-tab.w-100.nav-link(data-type='leader' data-bs-toggle='tab' data-bs-target='#leader-pane' type='button' role='tab' aria-controls='leader-pane' aria-selected='false')
+                                    | Leader Profiling
+                                    span#notification-number-leader.notification-number.d-none
+                        #profiling-tabs-content.tab-content.mt-3
+                            // All
+                            #all-pane.tab-pane.notification-pane.fade.show.active(role='tabpanel' aria-labelledby='all-tab' tabindex='0')
+                                .notification-items-wrapper
+                                    .notification-item.d-flex.justify-content-between 
+                                            .notification-content.d-flex.align-items-start.gap-2 
+                                                .d-flex.align-items-center.gap-1
+                                                    span.pointed
+                                                    .name-wrapper.d-flex.align-items-center 
+                                                        .name LP
+                                                div 
+                                                    p Leader Profiling 
+                                                    p The Confidence Score is 25% for First Deputy Prime Miniter of Tajikistan. Take a look 
+                                                    button.review-btn.btn.btn-warning.text-white
+                                                        | Review 
+                                            .notif-action 
+                                                .notif-time 1 months ago 
+                                                .dropdown
+                                                    button.btn.btn-primary.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+                                                        img(src="assets/images/three-dots-icon.png", alt="", srcset="")
+                                                    ul.dropdown-menu 
+                                                        li
+                                                            a.dropdown-item.mark-as-read(href="#") Mark as read 
+                                    .notification-item.d-flex.justify-content-between 
+                                            .notification-content.d-flex.align-items-start.gap-2 
+                                                .d-flex.align-items-center.gap-1
+                                                    span.pointed
+                                                    .name-wrapper.d-flex.align-items-center 
+                                                        .name LP
+                                                div 
+                                                    p Leader Profiling 
+                                                    p The Confidence Score is 25% for First Deputy Prime Miniter of Tajikistan. Take a look 
+                                                    button.review-btn.btn.btn-warning.text-white
+                                                        | Review 
+                                            .notif-action 
+                                                .notif-time 1 months ago 
+                                                .dropdown
+                                                    button.btn.btn-primary.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+                                                        img(src="assets/images/three-dots-icon.png", alt="", srcset="")
+                                                    ul.dropdown-menu 
+                                                        li
+                                                            a.dropdown-item.mark-as-read(href="#") Mark as read 
+                                    .notification-item.d-flex.justify-content-between 
+                                            .notification-content.d-flex.align-items-start.gap-2 
+                                                .d-flex.align-items-center.gap-1
+                                                    span.pointed
+                                                    .name-wrapper.d-flex.align-items-center 
+                                                        .name LP
+                                                div 
+                                                    p Leader Profiling 
+                                                    p The Confidence Score is 25% for First Deputy Prime Miniter of Tajikistan. Take a look 
+                                                    button.review-btn.btn.btn-warning.text-white
+                                                        | Review 
+                                            .notif-action 
+                                                .notif-time 1 months ago 
+                                                .dropdown
+                                                    button.btn.btn-primary.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-expanded="false")
+                                                        img(src="assets/images/three-dots-icon.png", alt="", srcset="")
+                                                    ul.dropdown-menu 
+                                                        li
+                                                            a.dropdown-item.mark-as-read(href="#") Mark as read 
+                                                    
+                                    nav#pagination-all-notifications.pagination-all-notifications.mt-3.d-flex.justify-content-center(aria-label='Pagination for All Notifications')
+                                        // Country
+                            #country-pane.tab-pane.notification-pane.fade(role='tabpanel' aria-labelledby='country-tab' tabindex='0')
+                                .notification-items-wrapper
+                                nav#pagination-country-notifications.pagination-all-notifications.mt-3.d-flex.justify-content-center(aria-label='Pagination for Country Notifications')
+                                    // State
+                            #state-pane.tab-pane.notification-pane.fade(role='tabpanel' aria-labelledby='state-tab' tabindex='0')
+                                .notification-items-wrapper
+                                nav#pagination-state-notifications.pagination-all-notifications.mt-3.d-flex.justify-content-center(aria-label='Pagination for State Notifications')
+                                    // Leader
+                            #leader-pane.tab-pane.notification-pane.fade(role='tabpanel' aria-labelledby='leader-tab' tabindex='0')
+                                .notification-items-wrapper
+                                nav#pagination-leader-notifications.pagination-all-notifications.mt-3.d-flex.justify-content-center(aria-label='Pagination for Leader Notifications')
+                        // Error Modal
+                        #errorModal.modal.fade(tabindex='-1' aria-labelledby='errorModalLabel' aria-hidden='true')
+                            .modal-dialog.modal-dialog-centered
+                                .modal-content
+                                    .modal-header
+                                        h5#errorModalLabel.modal-title.fs-5 @Resource.Error
+                                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                                    .modal-body
+                                        span#errorMessage Something went wrong!
+                                    .modal-footer
+                                        button.btn.bg-transparent.text-black(data-bs-dismiss='modal' type='button') @Resource.Close
+
+
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js") 
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js") 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js") 
+        script(src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js") 
+        script(src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js") 
+        script(src="https://cdn.datatables.net/2.2.2/js/dataTables.js") 
+        script(src="https://cdn.jsdelivr.net/npm/apexcharts") 
+        script(src="assets/js/date-range-custom.js")
+        script(src="assets/js/charts.js") 
+        script(src="assets/js/dashboard.js")
+   
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+    

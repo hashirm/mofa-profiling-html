@@ -1,0 +1,324 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+        link(rel="stylesheet", href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css")
+
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.bg-light 
+            include ../partials/_header
+            .dashboard-content 
+                div 
+                    .history.position-fixed
+                        .hide-show-menu.position-absolute 
+                            i.fa-solid.fa-angles-left 
+                        .history-content.min-vh-100 
+                            h3 Menu 
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="dashboard.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/home-01.png", alt="", srcset="")  
+                                    span Dashboard 
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="country-leader-profiling.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/story.png", alt="", srcset="")  
+                                    span Country & leader Profiling
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="designation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Designation
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between.active(href="assignDesignation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Assign Designations
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="resources.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/resources.png", alt="", srcset="")  
+                                    span Resources
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leader-images.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/leader-images-icon.png", alt="", srcset="")  
+                                    span Profile Pictures
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="confidence-score.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/level.png", alt="", srcset="")  
+                                    span Confidence Score
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="roles.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/parameter-icon.png", alt="", srcset="")  
+                                    span Roles
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="users.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/user.png", alt="", srcset="")  
+                                    span Users
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")  
+                .mofa-cms-content.designation.assign-designation
+                    ol.breadcrumb.align-items-center 
+                        li.breadcrumb-item(aria-current="page")
+                            img(src="assets/images/dashboard-icon.png", alt="", srcset="")
+                            | Dashboard
+                        li.breadcrumb-item.active(aria-current="page")
+                            | Assign Designations
+                    .recent-searches.assign-designation-filter
+                        .country-state-designation 
+                            .country-state 
+                                h5 Countries/States 
+                                .country-state-content 
+                                    form(action="")
+                                        .search-box
+                                            img(src="assets/images/search-icon.png", alt="", srcset="")
+                                            input.form-control(type="text" placeholder="Search country, states.")
+                                    .country-state-dropdown 
+                                        .assign-designation-accordion.accordion#assignDesignationAccordion
+                                            .no-results(style="display:none") No matching countries or states found 
+                                            .spinner-border.text-primary(role="status" style="display:none")
+                                                span.visually-hidden loading...
+                                            p.spinner-border-text(style="display:none;") Loading...
+                                            .accordion-item 
+                                                h3.accordion-header
+                                                    button.accordion-button(type="button" data-bs-toggle="collapse" data-bs-target="#region-0" aria-expanded="true" aria-controls="region-0")
+                                                        | Asia
+                                                #region-0.accordion-collapse.collapse.show(data-bs-target="#assignDesignationAccordion")
+                                                    .accordion-body.p-0 
+                                                        .accordion-item.inner-accordion.countries-list-inner-accordion
+                                                            h3.accordion-header   
+                                                                button.accordion-button.accordion-button-country.pt-0(data-bs-toggle="collapse" data-bs-target="#region-0-country-0-collapse" aria-expanded="false" aria-controls="region-0-country-collapse")
+                                                                    label(class="d-flex gap-3")
+                                                                        input(type="checkbox" name="Afghanistion" data-country-id="1")
+                                                                        | Afghanistan 
+                                                            #region-0-country-0-collapse.accordion-collapse.collapse 
+                                                                .accordion-body 
+                                                                    ul 
+                                                                        li
+                                                                            label.d-flex.gap-3.pt-0.pb-0.align-items-center(for="") 
+                                                                                input(type="checkbox")
+                                                                                | Kabul
+                                                                        li 
+                                                                            label.d-flex.gap-3.align-items-center(for="") 
+                                                                                input(type="checkbox")
+                                                                                | Qandahaar
+                                                        .accordion-item.inner-accordion.countries-list-inner-accordion 
+                                                            h3.accordion-header
+                                                                button.accordion-button.accordion-button-country.pt-0(type="button" data-bs-toggle="collapse" data-bs-target="#region-0-country-1-collapse" aria-expanded="false" aria-controls="region-0-country-1-collapse")
+                                                                    label.d-flex.gap-3(for="") 
+                                                                        input(type="checkbox")
+                                                                        | Armenia
+                                                            #region-0-country-1-collapse.accordion-collapse.collapse 
+                                                                .accordion-body 
+                                                                    ul 
+                                                                        li
+                                                                            label.d-flex.gap-3.pt-0.pb-0.align-items-center(for="") 
+                                                                                input(type="checkbox")
+                                                                                | Kabul
+                                                                        li 
+                                                                            label.d-flex.gap-3.align-items-center(for="") 
+                                                                                input(type="checkbox")
+                                                                                | Qandahaar
+                            .designation
+                                h5 Designation
+                                .designation-content
+                                    .breadcrumb-assigndesignation-button.d-flex.flex-column.flex-xxl-row.gap-3.justify-content-between.align-items-center
+                                        nav#country-state-name(aria-label='breadcrumb')
+                                            ol.breadcrumb.m-0
+                                                li.breadcrumb-item(aria-current='page')
+                                                    a#countryName(href='javascript:void(0)') Afghanistan
+                                                li#stateName.breadcrumb-item.active(aria-current='page')
+                                        nav#multiple-checked-countries.d-flex.multiple-checked-countries
+                                            ul.d-flex.flex-wrap
+                                            // Dynamic content will load here
+                                        button#assignDesignation.assign-designation(type='button' data-bs-toggle='modal' data-bs-target='#addAssignDesignationModal')
+                                            img(src='/assets/images/plus-icon.png' alt='' srcset='')
+                                            | Assign Designations
+                                    #assigned-designations.assigned-designations.position-relative(style='overflow-y: auto;')
+                                        h6 Designations Assigned
+                                        table#table.draggable-table(style='border-spacing:0 10px')
+                                            tbody#assignedDesignation.sortable(data-entity-type='')
+                                                tr(data-id='22' data-order='1')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 1. 
+                                                            | Supreme Leader
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+                                                tr(data-id='1' data-order='2')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 2. 
+                                                            | Prime Minister
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+                                                tr(data-id='1009' data-order='3')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 3. 
+                                                            | First Deputy Prime Minister
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+                                                tr(data-id='1010' data-order='4')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 4. 
+                                                            | Second Deputy Prime Minister
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+                                                tr(data-id='1296' data-order='5')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 5. 
+                                                            | Third Deputy Prime Minister
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+                                                tr(data-id='1011' data-order='6')
+                                                    td
+                                                        .designation-name
+                                                            img(src='/assets/images/move-dots.png' alt='Drag handle')
+                                                            span
+                                                                strong 6. 
+                                                            | Minister Of Defense
+                                                    td
+                                                        a.remove-icon.deleteCountryDesignation(href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#confirmDeleteModal')
+                                                            img(src='/assets/images/remove-icon.png' alt='Remove')
+
+                                        #addAssignDesignationModal.addAssignDesignationModal.modal.fade(tabindex='-1' aria-labelledby='addAssignDesignationModalLabel' aria-hidden='true')
+                                            .modal-dialog.modal-dialog-centered
+                                                .modal-content
+                                                    .modal-header
+                                                        h1#addAssignDesignationModalLabel.modal-title Assign Designation
+                                                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                                                    .modal-body
+                                                        form(action='#')
+                                                            label.search-box-wrapper.position-relative
+                                                                img.position-absolute(src='assets/images/search-icon.png' alt='')
+                                                                input#searchAssignDesignations.search-inputField.form-control(type='text' placeholder='Search')
+                                                            #designationLList.checkboxes-wrapper
+                                                                // Dynamically loaded checkboxes
+                                                                .no-results-Designation(style='display: none;') Not Found
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                                label.label-checkbox.d-flex.align-items-center.label-designation(for='designation-4193')
+                                                                    input#designation-4193.governor.form-control(type='checkbox' name='designation' value='4193')
+                                                                    span.designation-label-text.ms-2 ?Minister Of Civil Service And Insurances
+                                                        p.not-found-create(type='button' data-bs-toggle='modal' data-bs-target='#addDesignationModal')
+                                                        | Designation to assign not found? 
+                                                        a(href='javascript:void(0)') Create One
+                                                    .modal-footer
+                                                        div
+                                                            button#addDesignationbutton.btn(type='button') Add
+                                                            button.btn.cancel-button(type='button' data-bs-dismiss='modal') Cancel
+                                                        p.action-info *The designation will be applied to all the students
+                                       
+
+                                                
+                                        #assigned-new-designations.d-none
+                                            .assigned-designations.position-relative(style='overflow-y: auto;')
+                                                #mutiple-selection-dialogBox.mutiple-selection-dialogBox.d-none
+                                                p.d-none
+                                                    | You have made multiple selections. Assign common designations for the selections
+                                                table#table.draggable-table.assignedNewDesignationTable.d-none(style='border-spacing: 0 10px')
+                                                    tbody#assignedNewDesignation.sortable(data-entity-type='country' data-entity-default-id='1' data-entity-default-name='Afghanistan')
+                                                        // Dynamic content will load here
+                                    //- .apply-changes-btn-wrapper
+                                    //-     button#applyNewDesignations.assign-designation.apply-change-btn Apply Changes  
+                        #confirmDeleteModal.modal.fade(tabindex='-1' aria-labelledby='confirmDeleteModalLabel' aria-hidden='true')
+                            .modal-dialog.modal-dialog-centered
+                                .modal-content
+                                    .modal-header
+                                        h5#confirmDeleteModalLabel.modal-title.fs-5 Confirm Deletion
+                                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                                    .modal-body
+                                        | Are you sure you want to delete this designation?
+                                    .modal-footer
+                                        button#confirmDeleteBtn.btn(type='button') Delete
+                                        button.btn.bg-transparent.text-black(data-bs-dismiss='modal' type='button') Cancel
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js") 
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js") 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js") 
+        script(src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js") 
+        script(src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js") 
+        script(src="https://cdn.datatables.net/2.2.2/js/dataTables.js") 
+        script(src="assets/js/assignDesignation.js") 
+        script(src="assets/js/date-range-custom.js")
+        script(src="assets/js/dashboard.js")
+   
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+        //- script(type="importmap" defer).
+        //-     {
+        //-         "imports": {
+        //-             "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+        //-             "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+        //-         }
+        //-     }
+        //- script(type="module" defer).
+        //-     import * as bootstrap from 'bootstrap'
+            //- new bootstrap.Popover(document.getElementById('popoverButton'))
+
+        script.
+            $(function(){
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            })

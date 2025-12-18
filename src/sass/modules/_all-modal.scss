@@ -1,0 +1,136 @@
+/*====success error modal=====*/
+
+.successModal .modal-header .btn-close, .errorModal .modal-header .btn-close {
+    background-color: #D0D5DD;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.successModal .modal-body-content img, .errorModal .modal-body-content img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.successModal .modal-body-content, .errorModal .modal-body-content {
+    margin-bottom: 55px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/*==================*/
+
+
+// modal css
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+.modal-header {
+    padding: 40px 50px 24px;
+    border-bottom: 0;
+}
+
+.dashboard .mofa-cms-content .recent-searches form {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
+    width: 100%;
+    row-gap: 15px;
+}
+.mofa-cms-content .modal-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mofa-cms-content .modal-body form label
+ {
+    width: 100%;
+}
+
+.mofa-cms-content.designation.assign-designation .recent-searches form{
+    row-gap: 15px;
+}
+
+.modal-title{
+    border-radius: 5px;
+    display: flex;
+    border: 0;
+    color: #8A1538;
+    font-weight: 600;
+}
+.modal-header .btn-close {
+    padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
+    margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x)) calc(-0.5 * var(--bs-modal-header-padding-y)) auto;
+}
+.modal-body {
+    padding: 0px 50px;
+}
+.mofa-cms-content .modal-body form label{
+    width: 100%;
+}
+.mofa-cms-content .modal-body form .label-checkbox {
+    margin-bottom: 16px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+}
+
+.mofa-cms-content .modal-body form input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0px;
+}
+.mofa-cms-content .modal-footer {
+    padding: 0 50px;
+    border-top: 0px;
+    padding-bottom: 40px;
+}
+.mofa-cms-content .modal-footer .btn {
+    padding: 13px 30px;
+    background-color: #8A1538;
+    font-size: 16px;
+    color: #fff;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    float: left;
+    padding-right: var(--bs-breadcrumb-item-padding-x);
+    color: var(--bs-breadcrumb-divider-color);
+    content: var(--bs-breadcrumb-divider, "\f105") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+    font-family: "FontAwesome";
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox] {
+    cursor: pointer;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    padding: 0;
+}
+.mofa-cms-content .modal-body form .label-checkbox {
+    margin-bottom: 16px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+}
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox span{
+    font-size: 15px;
+}
+
+.mofa-cms-content .modal-body form input[type=text]
+ {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}

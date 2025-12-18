@@ -1,0 +1,205 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+        link(rel="stylesheet", href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css")
+
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.bg-light 
+            include ../partials/_header
+            .dashboard-content 
+                div 
+                    .history.position-fixed
+                        .hide-show-menu.position-absolute 
+                            i.fa-solid.fa-angles-left 
+                        .history-content.min-vh-100 
+                            h3 Menu 
+                            a.aside-link.d-flex.align-items-center.justify-content-between.active(href="dashboard.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/home-01.png", alt="", srcset="")  
+                                    span Dashboard 
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="country-leader-profiling.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/story.png", alt="", srcset="")  
+                                    span Country & leader Profiling
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="designation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Designation
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="assignDesignation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Assign Designations
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="resources.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/resources.png", alt="", srcset="")  
+                                    span Resources
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leader-images.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/leader-images-icon.png", alt="", srcset="")  
+                                    span Profile Pictures
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="confidence-score.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/level.png", alt="", srcset="")  
+                                    span Confidence Score
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="roles.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/parameter-icon.png", alt="", srcset="")  
+                                    span Roles
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="users.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/user.png", alt="", srcset="")  
+                                    span Users
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")  
+                .mofa-cms-content 
+                    nav(aria-label="breadcrumb")
+                    ol.breadcrumb.align-items-center.gap-2 
+                        li.breadcrumb-item.active(aria-current="page")
+                            | Dashboard 
+                        img(src="assets/images/chevron-right-light.png", alt="", srcset="")
+                    p.mofa-cms-info
+                        | Hi 
+                        strong 
+                            | superadmin 
+                        | here's your personal yet exclusive dashboard! 
+                    .accordion.analyticdashboard-accordion#analyticDashboard 
+                        .accordion-item.border-0
+                            h2.accordion-header
+                                button.fw-bold.accordion-button(type="button" data-bs-toggle="collapse" data-bs-target="#dashboardcollapseOne" aria-expanded="true" aria-controls="dashboardcollapseOne")
+                                    | Analytics Dashboard   
+                            .accordion-collapse.collapse.show#dashboardcollapseOne(data-bs-parent="#analyticDashboard")
+                                .accordion-body     
+                                    .analytic-box-wrapper 
+                                        .analytic-box 
+                                            .box-text 
+                                                span#CountCountrySearched 
+                                                    | 462
+                                                p Times Country Searched for 
+                                            .box-icon 
+                                                img(src="assets/images/analytic-box-icon.png", alt="", srcset="")
+
+                                        .analytic-box 
+                                            .box-text 
+                                                span#CountStateSearched 
+                                                    | 25
+                                                p Times State Searched For 
+                                            .box-icon 
+                                                img(src="/assets/images/analytic-box-icon-02.png", alt="", srcset="")
+                                        .analytic-box 
+                                            .box-text 
+                                                span#CountStateSearched 
+                                                    | 25
+                                                p Times State Searched For 
+                                            .box-icon 
+                                                img(src="/assets/images/analytic-box-icon-02.png", alt="", srcset="")
+                    .charts-wrapper
+                        .areaChart-wrapper
+                            .areaChart-content.d-flex.flex-column.flex-md-row.gap-3.justify-content-between.align-items-center
+                                h2 No. of Downloads Made 
+                                .search-box.d-flex.align-items-center
+                                    select#lineChart-select.lineChart-select.form-control.select2-hidden-accessible
+                                        option(value="select year" data-image="assets/images/year-select-icon.png") Select Year 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2025 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2026 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2027 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2028 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2029 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2030 
+                            .line-chart.w-100#downloadAuditLogsChart
+                        .barchart-wrapper 
+                            .barChart-content.d-flex.flex-column.flex-md-row.gap-3.justify-content-between.align-items-center
+                                h2 No. of Downloads Made 
+                                .search-box.d-flex.align-items-center
+                                    select#barChart-select.lineChart-select.form-control.select2-hidden-accessible
+                                        option(value="select year" data-image="assets/images/year-select-icon.png") Select Year 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2025 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2026 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2027 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2028 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2029 
+                                        option(value="2025" data-image="assets/images/year-select-icon.png") 2030 
+                            .barchart.w-100#searchCountChart
+                    .recent-searches 
+                        h2 Recent Searches Made 
+                        form(action="")
+                            .search-box-wrapper.position-relative.w-100
+                                img.search-icon.position-absolute(src="assets/images/search-icon.png")
+                                input.search-box.form-control#searchRecentSearchesMade(type="text" placeholder="Search")
+                            button.d-flex.align-items-center.bg-white.fillter-btn.fs-14.fw-600.h-52.ran(type="button" value="Date Range")
+                                .icon-text.d-flex.align-items-center.gap-2
+                                    img(src="assets/images/fillter-icon.svg", alt="", srcset="")
+                                    span Any Time
+                                    .arrow-down 
+                                        img(src="assets/images/circle-arrow-down.svg", alt="", srcset="")
+                        .table-content-wrapper
+                            .table-content
+                                table.table.nowrap#usersTable(style="width:100%")
+                                    thead
+                                        tr
+                                            th(data-data="firstName")
+                                                | Keyword
+                                            th(data-data="firstName")
+                                                | Results
+                                            th(data-data="firstName")
+                                                | Date
+                                    tbody 
+                                        tr 
+                                            td Sheik Tamim 
+                                            td Tamim bin Hamad Al Thani 
+                                            td 10-08-2025  
+                                        tr 
+                                            td Sheik Tamim 
+                                            td Tamim bin Hamad Al Thani 
+                                            td 10-08-2025  
+                                        tr 
+                                            td Sheik Tamim 
+                                            td Tamim bin Hamad Al Thani 
+                                            td 10-08-2025  
+                                        tr 
+                                            td Sheik Tamim 
+                                            td Tamim bin Hamad Al Thani 
+                                            td 10-08-2025  
+
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js") 
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js") 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js") 
+        script(src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js") 
+        script(src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js") 
+        script(src="https://cdn.datatables.net/2.2.2/js/dataTables.js") 
+        script(src="https://cdn.jsdelivr.net/npm/apexcharts") 
+        script(src="assets/js/date-range-custom.js")
+        script(src="assets/js/charts.js") 
+        script(src="assets/js/dashboard.js")
+   
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+    

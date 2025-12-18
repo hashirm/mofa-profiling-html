@@ -1,0 +1,92 @@
+.mofa-cms-content.designation.leader-images .recent-searches .search-box-wrapper
+ {
+    max-width: 1066px;
+}
+
+.dashboard .mofa-cms-content .assign-designation.add-mofa-role {
+    width: auto;
+}
+
+.mofa-cms-content.designation.parameter .nav-link.active {
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 5px solid #8A1538;
+}
+.mofa-cms-content.designation.parameter .nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    color: #8A1538;
+    padding: 27px 0;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.designation .designation-content, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation .designation-content{
+    padding: 16px;
+}
+
+.dashboard .mofa-cms-content .recent-searches h2, .dashboard .mofa-cms-content .recent-searches .h2{
+    margin-bottom: 24px;
+}
+.dashboard .designation h2, .dashboard .designation .h2 {
+    font-size: 26px;
+}
+.mofa-cms-content.designation.parameter.resources .countryProfileContent-accordion .accordion-header button {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+    border-top-left-radius: var(--bs-accordion-inner-border-radius);
+    border-top-right-radius: var(--bs-accordion-inner-border-radius);
+}
+
+.mofa-cms-content.designation.assign-designation .designation-content .apply-changes-btn-wrapper, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .apply-changes-btn-wrapper
+ {
+    display: flex;
+    justify-content: end;
+    margin-top: 55px;
+}
+
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: 0.125rem;
+}
+.form-check-input:checked {
+    background-color: #83273C;
+    border-color: #83273C;
+}
+
+.assign-designation-filter .select2-selection {
+    border: 1px solid #D0D5DD;
+    padding: 0px 12px;
+    padding-inline-end: 10px !important;
+    font-family: var(--font-tertiary);
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.select2-container .select2-selection--single {
+    height: 49px;
+    border-radius: 8px;
+}
+.assign-designation-filter .select2-container .select2-selection--single
+ {
+    height: 54px;
+}
+.dashboard .mofa-cms-content .assign-designation.add-mofa-role {
+    width: auto;
+}
+
+.select2-container--default .select2-results__option--selected{
+    background-color: #F2F2F2;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+    background-color:#926D92 !important;
+    color: #fff !important;
+}

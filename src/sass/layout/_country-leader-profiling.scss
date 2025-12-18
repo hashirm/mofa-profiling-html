@@ -1,0 +1,1285 @@
+
+
+
+// country-leader-profiling
+
+.dashboard{
+    .next{
+        text-align: end;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 17px;
+        justify-content: space-between;
+        align-items: center;
+        .accordion{
+            width: 100%;
+            max-width: 309px;
+            li {
+            overflow: hidden;
+            max-width: 267px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+                &:hover{
+                        overflow: visible
+                }
+            }
+        }
+        .accordion-download {
+            width: 100%;
+            max-width: 217px;
+            .accordion-item {
+                border: 0;
+            }
+            .accordion-button:not(.collapsed) {
+                background-color: black;
+                color: white;
+                padding-bottom: 16px;
+                justify-content: space-between;
+            }
+            .accordion-button::after {
+                content: "\f107";
+                float: right;
+                border: none;
+                font-family: 'FontAwesome';
+                color: white;
+            }
+            .accordion-collapse{
+                border: 1px solid rgb(208, 213, 221);
+                margin-top: 10px;
+                border-radius: 6px;
+                .word-export {
+                    column-gap: 12px;
+                }
+                .pdf-export {
+                    column-gap: 8px;
+                }
+            }
+
+        }
+        .accordion-data-source {
+            max-width: 312px;
+        }
+        
+
+        @include media-breakpoint-up(sm){
+            flex-direction:row;
+            align-items: center;
+        }
+       
+    }
+
+}
+
+
+.select2-dropdown {
+    z-index: 9999999999999999999;
+}
+
+
+    .dashboard .next .accordion-download .accordion-collapse {
+        border: 1px solid rgb(208, 213, 221);
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .dashboard .next .accordion-download .accordion-button {
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+        padding-bottom: 16px;
+    }
+
+    .dashboard .next .accordion-download .accordion-body {
+        padding: 0
+    }
+
+        .dashboard .next .accordion-download .accordion-body li {
+            padding: 0 1.25rem;
+        }
+
+            .dashboard .next .accordion-download .accordion-body li:hover {
+                background-color: black;
+                color: white;
+            }
+
+                .dashboard .next .accordion-download .accordion-body li:hover a {
+                    color: white;
+                }
+
+.dashboard .next .back-link {
+    display: flex;
+    -moz-column-gap: 14px;
+    column-gap: 14px;
+    align-items: center;
+    color: rgb(138, 21, 56);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dashboard .next .textData {
+    font-weight: 500;
+}
+
+.dashboard .next .info-icon {
+    border: 2px solid rgb(22, 22, 22);
+    border-radius: 50%;
+    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard .next .accordion-button::after {
+    margin-inline-end: 0;
+    --bs-accordion-btn-icon-width: 1rem;
+}
+
+.dashboard .next .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    box-shadow: none;
+    padding-bottom: 9px;
+    justify-content: space-between
+}
+
+.dashboard .next .accordion-body {
+    padding-top: 0;
+}
+
+    .dashboard .next .accordion-body ul li a {
+        color: rgb(13, 66, 97);
+        font-size: 14px;
+        line-height: 26px;
+        max-width: 125px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.dashboard .next .next-btn {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 11px 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+.dashboard .next .skip-next-info {
+    max-width: 289px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width:576px) {
+    .dashboard .next .skip-next-info {
+        align-items: start;
+    }
+}
+
+.dashboard .next .skip-next-info .info-skip {
+    text-align: start;
+    margin-top: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    color: rgba(13, 66, 97, 0.6);
+}
+
+
+.dashboard .next .skip-btn {
+    background-color: transparent;
+    border: 1px solid rgb(208, 213, 221);
+    color: rgb(138, 21, 56);
+}
+
+@media (min-width: 576px) {
+    .dashboard{
+        .next{
+            .next-btn{
+                padding: 15px 53px;
+            }
+        }
+    }
+   
+}
+
+
+#pills-searchLeader ul li {
+    font-size: 14px;
+    list-style: circle;
+    margin-inline-start: 40px;
+}
+
+    #pills-searchLeader ul li span {
+        font-style: italic;
+    }
+
+
+
+    .search-box .select2-container{
+    width: 153px !important;
+}
+
+.select2-container .select2-selection--single{
+    height: 49px;
+    border-radius: 8px;
+}
+ 
+.search-box .select2-container img {
+    padding: 6px 5px 8px 11px;
+}
+
+.dashboard .mofa-cms-content .areaChart-wrapper, .dashboard .mofa-cms-content .barchart-wrapper {
+    background: #fff;
+    border-radius: 18px;
+    padding: 27px 29px 36px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.fillter-btn {
+    border: 1px solid #D0D5DD;
+    padding: 9px 20px;
+    padding-inline-end: 10px !important;
+    font-family: var(--font-tertiary);
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.daterangepicker {
+    padding: 20px;
+    border-radius: 14px;
+    margin-inline-end: 50px;
+}
+
+.daterangepicker .ranges li.active {
+    background-color: #8A1538;
+    color: #fff;
+}
+.daterangepicker .ranges li {
+    border-radius: 6.82px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #2D3748;
+    height: 32px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+@media (min-width: 564px) {
+    .daterangepicker .ranges ul {
+        width: 200px;
+    }
+}
+
+div.dt-container div.dt-layout-row div.dt-layout-cell.dt-layout-start {
+    display: none;
+}
+
+div.dt-container div.dt-layout-row div.dt-layout-cell.dt-layout-end {
+    margin: auto;
+}
+div.dt-container .dt-paging .dt-paging-button.current {
+    background: rgba(138, 21, 56, 1);
+    color: #fff !important;
+    border-radius: 4px;
+}
+
+table.dataTable > thead > tr > th{
+    border-bottom: 0;
+}
+
+table.dataTable > thead > tr > th{
+    padding: 22px 32px;
+    background-color: #F0F3F561;
+}
+
+table.dataTable > tbody > tr > td {
+    color: #00000099;
+    vertical-align: middle;
+}
+table.dataTable > tbody > tr > td {
+    padding: 22px 32px;
+}
+
+div.dt-container.dt-empty-footer tbody > tr:last-child > *{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.apexcharts-legend.apx-legend-position-top.apexcharts-align-left{
+    justify-content: center !important;
+}
+.apexcharts-legend.apx-legend-position-top.apexcharts-align-left {
+    top: auto !important;
+    bottom: -32px !important;
+}
+.apexcharts-toolbar{
+    display: none !important;
+}
+
+
+        .assign-designation-accordion .accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+            justify-content:start;
+            
+        }
+        .assign-designation-accordion .inner-accordion{
+            padding-inline-start:24px;
+            padding-top:0;
+        }
+
+    .assign-designation-accordion .inner-accordion input[type="checkbox"] {
+        appearance: none;
+        border: 1.25px solid #8A1538;
+        width:16px;
+        height:16px;
+        position:relative;
+        border-radius:3px;
+    }
+
+            .assign-designation-accordion .inner-accordion.countries-list-inner-accordion .accordion-body ul li {
+                padding: 0 !important;
+            }
+            .assign-designation-accordion .inner-accordion.countries-list-inner-accordion li label{
+                padding:10px 10px 10px 72px;
+                border-radius:8px;
+                margin-bottom:4px;
+            }
+                .assign-designation-accordion .inner-accordion.countries-list-inner-accordion li label.active {
+                    background-color: #8A153814;
+                }
+
+                .assign-designation-accordion .inner-accordion input[type="checkbox"]::after {
+                    content: "\2714";
+                    color: #8A1538;
+                    position: absolute;
+                    top: 0px;
+                    inset-inline-start: 3px;
+                    font-size: 9px;
+                    transform: rotate(13deg);
+                }
+
+            .assign-designation-accordion .inner-accordion input[type="checkbox"]:checked {
+                appearance: none;
+                background: #8A1538;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                border-radius: 3px;
+            }
+            .assign-designation-accordion .inner-accordion .accordion-button input[type="checkbox"]::after {
+                content: "\2714";
+                color: #8A1538;
+                position: absolute;
+                top: 2px;
+                inset-inline-start: 3px;
+                font-size: 9px;
+                transform: rotate(13deg);
+            }
+            .assign-designation-accordion .inner-accordion .accordion-button input[type="checkbox"]:checked::after {
+                content: "\2714";
+                color: #fff;
+                position: absolute;
+                top: 2px;
+                inset-inline-start: 3px;
+                font-size: 9px;
+                transform: rotate(13deg);
+            }
+
+            .assign-designation-accordion .inner-accordion input[type="checkbox"]:checked::after {
+                content: "\2714";
+                color: #fff;
+                position: absolute;
+                top: 0px;
+                inset-inline-start: 3px;
+                font-size: 9px;
+                transform: rotate(13deg);
+            }
+
+
+
+
+            
+
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation, .mofa-cms-content.designation.parameter.resources .country-state-designation{
+    border-radius: 6px;
+    border: 1px solid #D0D5DD;
+    display: grid;
+    grid-template-columns: 400px auto;
+}
+
+@media (max-width:991px){
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation, .mofa-cms-content.designation.parameter.resources .country-state-designation {
+            grid-template-columns: auto;
+        }
+    }
+
+
+.mofa-cms-content.designation.assign-designation.confidence-score .recent-searches .country-state-designation{
+    border:none;
+}
+
+@media (max-width: 991.98px) {
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation {
+        grid-template-columns: 100%;
+    }
+}
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation h5, .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .h5, .mofa-cms-content.designation.assign-designation.confidence-score .table th{
+    margin: 0;
+    padding: 21px 32px;
+    background-color: rgba(240, 243, 245, 0.3803921569);
+}
+.mofa-cms-content.designation.assign-designation.confidence-score .table th{
+    border-bottom:0;
+}
+.mofa-cms-content.designation.assign-designation.confidence-score .table tr td {
+    padding: 21px 32px;
+    vertical-align:middle;
+}
+    .mofa-cms-content.designation.assign-designation.confidence-score .table tr td a {
+        color: #00000099;
+        text-decoration:underline;
+    }
+    .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button {
+        color: white;
+        padding: 6px 16px;
+        border: 1px solid #00000040;
+    }
+
+
+    .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-ninty {
+        background-color: #59B9A7;
+    }
+        .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-seventy {
+            background-color: #59B95B;
+        }
+        .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-fifty {
+            background-color: #D6D977;
+        }
+
+        .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-thirty {
+            background-color: #D99C51;
+        }
+        .mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-ten {
+            background-color: #CF6767;
+        }
+
+
+        .mofa-cms-content.designation.assign-designation.confidence-score .table tr td:last-child {
+            text-align: center;
+        }
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state{
+    border-inline-end: 1px solid #D0D5DD;
+}
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .country-state-content, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .country-state-content {
+            padding-block:16px;
+            padding-inline-end:14px;
+            padding-inline-start:32px;
+        }
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .country-state-content .country-state-dropdown, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .country-state-content .country-state-dropdown {
+                height: 414px;
+                overflow: auto;
+            }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar-track, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar-track {
+                    background: #EAEAEA;
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    border-radius: 4px;
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar-thumb, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .country-state-content .country-state-dropdown::-webkit-scrollbar-thumb{
+                    background: rgba(0, 0, 0, 0.2);
+                    border-radius: 4px;
+                    border: 0;
+                }
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item{
+            border: 0;
+        }
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button{
+                font-weight: bold;
+                padding-inline-start: 3px;
+            }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button:focus, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button:focus {
+                    box-shadow: none;
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button::before, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button::before{
+                    flex-shrink: 0;
+                    width: var(--bs-accordion-btn-icon-width);
+                    height: var(--bs-accordion-btn-icon-width);
+                    margin-inline-end: 8px;
+                    content: "";
+                    background-image: url("../../assets/images/accordion-assign-designation-arrow.png") !important;
+                    background-repeat: no-repeat;
+                    background-size: auto !important;
+                    background-position: center;
+                    transition: var(--bs-accordion-btn-icon-transition);
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button:not(.collapsed)::before, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button:not(.collapsed)::before {
+                    background-image: var(--bs-accordion-btn-active-icon);
+                    transform: var(--bs-accordion-btn-icon-transform);
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button:not(.collapsed), .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button:not(.collapsed) {
+                    box-shadow: none;
+                }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-button::after, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-button::after{
+                    display: none;
+                }
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-body, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-body {
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+                padding-top: 0;
+            }
+
+                .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-body ul li, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-body ul li{
+                    padding: 10px 30px;
+                }
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-body ul li a, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item ul li a{
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.8);
+                font-size: 15px;
+            }
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .accordion-item .accordion-body ul li.active, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .accordion-item .accordion-body ul li.active{
+                font-weight: bold;
+                border-radius: 8px;
+                background-color: rgba(138, 21, 56, 0.0784313725);
+            }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .assign-designation-accordion {
+        margin-inline-end: 10px;
+    }
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state .assign-designation-accordion .accordion-button:not(.collapsed), .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state .assign-designation-accordion .accordion-button:not(.collapsed){
+            background-color: #fff;
+            color: #8A1538;
+        }
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state form, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state form{
+            width: 100%;
+            display: block;
+        }
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state form .search-box, .recent-searches .confidence-score-search .search-box, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state form .search-box{
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .recent-searches .confidence-score-search .search-box{
+            width:98%;
+        }
+
+            #recentSearchesMadeConfidenceScore_wrapper .dt-layout-row:first-child{
+                display:none;
+            }
+
+        #recentSearchesMadeConfidenceScore_wrapper .dt-layout-row.dt-layout-table {
+            margin-top:0px;
+        }
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state form .search-box img, .recent-searches .confidence-score-search .search-box img, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state form .search-box img{
+    position: absolute;
+    top: 15px;
+    inset-inline-start: 12px;
+}
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .country-state form .search-box input, .recent-searches .confidence-score-search .search-box input, .mofa-cms-content.designation.parameter.resources .country-state-designation .country-state form .search-box input{
+    padding-inline-start: 36px;
+}
+
+.mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation .designation-content {
+    padding: 16px;
+}
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .mutiple-selection-dialogBox, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .mutiple-selection-dialogBox {
+        margin-top: 118px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        border: 1px dashed #CECECE;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 515px;
+        height: 172px;
+    }
+
+        .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .mutiple-selection-dialogBox{
+            margin-top:10px;
+        }
+
+.mofa-cms-content.designation.parameter.resources .leaderprofiling-pane .country-state-designation .designation-content .mutiple-selection-dialogBox {
+    margin-top: 136px;
+}
+
+.mofa-cms-content.designation.parameter.resources .countryProfileContent-accordion .accordion-header button {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+            .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .mutiple-selection-dialogBox p, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .mutiple-selection-dialogBox p {
+                font-size: 16px;
+                color: #00000099;
+                max-width: 400px;
+                text-align: center
+            }
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .breadcrumb-assigndesignation-button {
+            margin-bottom: 32px;
+        }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .breadcrumb-item a {
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .breadcrumb-item.active {
+        font-weight: 600;
+        color: #8A1538;
+    }
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .multiple-checked-countries, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .multiple-checked-countries{
+        max-width: 524px;
+    }
+
+        .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .multiple-checked-countries ul li, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .multiple-checked-countries ul li {
+            margin-inline-end: 4px;
+            color: #00000066;
+        }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .draggable-table .designation-name {
+        display: flex;
+        align-items: center;
+        -moz-column-gap: 12px;
+        column-gap: 12px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.8);
+        width: 477px;
+        white-space: nowrap;
+    }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .draggable-table .designation-name span {
+        font-size: 15px;
+    }
+
+    .mofa-cms-content.designation.assign-designation .recent-searches .country-state-designation .designation .designation-content .draggable-table .designation-name span strong {
+        font-weight: 600;
+    }
+
+.mofa-cms-content.designation.assign-designation .recent-searches .search-box-wrapper {
+    max-width: 464px;
+}
+
+.mofa-cms-content.designation.assign-designation .recent-searches form {
+    row-gap: 15px;
+}
+
+.mofa-cms-content.designation.resources .recent-searches {
+    padding-inline-end: 20px;
+}
+
+/*    .mofa-cms-content.designation.resources .recent-searches .tab-content {
+        height: 450px;
+        overflow: auto;
+        padding-inline-end: 20px;
+    }*/
+
+        .mofa-cms-content.designation.resources .recent-searches .tab-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mofa-cms-content.designation.resources .recent-searches .tab-content::-webkit-scrollbar-track {
+            background: #EAEAEA;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .mofa-cms-content.designation.resources .recent-searches .tab-content::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            border: 0;
+        }
+
+.mofa-cms-content.designation.assign-designation table caption {
+    padding: 0.5em 0;
+}
+
+.mofa-cms-content.designation.assign-designation .p {
+    text-align: center;
+    padding-top: 140px;
+    font-size: 14px;
+}
+
+
+
+
+
+.assigned-designations {
+    height: 418px;
+    overflow-y: auto;
+}
+
+    .assigned-designations::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .assigned-designations::-webkit-scrollbar-track {
+        background: #EAEAEA;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .assigned-designations::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        border: 0;
+    }
+
+.draggable-table {
+    margin-top: 30px;
+    margin-inline-end:14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 50%;
+    border-collapse: collapse;
+    background: white;
+}
+
+    .draggable-table .draggable-table__drag {
+        font-size: 0.95em;
+        font-weight: lighter;
+        text-transform: capitalize;
+        position: absolute;
+        width: 100%;
+        text-indent: 50px;
+        border: 1px solid #f1f1f1;
+        z-index: 10;
+        cursor: grabbing;
+        box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.05);
+        opacity: 1;
+    }
+
+    .draggable-table thead th {
+        height: 25px;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 10px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    .draggable-table tbody tr {
+        cursor: grabbing;
+        display: block;
+        height: 58px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(214, 213, 213);
+        border-radius: 5px;
+    }
+
+        .draggable-table tbody tr td {
+            font-size: 0.95em;
+            font-weight: lighter;
+            text-transform: capitalize;
+            height: 58px;
+            padding: 14px 18px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+            .draggable-table tbody tr td .remove-icon {
+                position: relative;
+                top: 0px;
+                inset-inline-end: 0px;
+                z-index: 88;
+                cursor: pointer;
+            }
+
+            .draggable-table tbody tr td:nth-of-type(2) {
+                width: 100%;
+                text-align: end;
+            }
+
+        .draggable-table tbody tr.is-dragging {
+            background: rgba(138, 21, 56, 0.0784313725);
+        }
+
+            .draggable-table tbody tr.is-dragging td {
+                color: #ffe683;
+            }
+
+@media (max-width: 575.98px) {
+    .mofa-cms-content.designation.parameter .nav-pills {
+        flex-direction: column;
+    }
+}
+
+.mofa-cms-content.designation.parameter .nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    color: #8A1538;
+    padding: 27px 0;
+}
+
+    .mofa-cms-content.designation.parameter .nav-link.active {
+        background: transparent;
+        border-radius: 0;
+        border-bottom: 5px solid #8A1538;
+    }
+
+
+        .mofa-cms-content.designation.parameter .accordion-button:not(.collapsed) {
+            background-color: transparent;
+            color: #212529;
+        }
+
+.mofa-cms-content.designation.parameter .tab-pane {
+    margin-top: 48px;
+}
+
+    .mofa-cms-content.designation.parameter.notifications .tab-pane{
+        margin-top:0px;
+    }
+
+    .mofa-cms-content.designation.parameter .recent-searches .search-box-wrapper {
+        max-width: 900px;
+    }
+
+.mofa-cms-content.designation.parameter .recent-searches .assign-designation {
+    max-width: 135px;
+}
+
+.mofa-cms-content.designation.parameter.resources .assign-designation{
+    max-width:215px;
+}
+    .mofa-cms-content.designation.parameter.resources .assign-designation.add-resource-btn{
+        max-width:182px;
+    }
+
+    .mofa-cms-content.designation.leader-images .recent-searches .search-box-wrapper {
+        max-width: 1066px;
+    }
+
+.mofa-cms-content.designation.leader-images .profile-image-wrapper, .leader-photo .modal .profile-image-wrapper{
+    margin-bottom: 24px;
+}
+
+    .mofa-cms-content.designation.leader-images .profile-image-wrapper img, .leader-photo .modal .profile-image-wrapper img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #ddd;
+        object-fit: cover;
+    }
+
+    .mofa-cms-content.designation.leader-images .h5, .leader-photo .modal .h5 {
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+        font-size: 15px;
+        margin-bottom: 32px;
+    }
+
+.mofa-cms-content.designation.leader-images .modal .modal-dialog, .leader-photo .modal .modal-dialog{
+    max-width: 700px;
+}
+
+.mofa-cms-content.designation.leader-images .modal .images-select-wrapper, .leader-photo .modal .img-select-wrapper {
+    -moz-column-gap: 32px;
+    column-gap: 32px;
+    margin-bottom: 32px;
+    max-width: 590px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper::-webkit-scrollbar, .leader-photo .modal .images-select-wrapper::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper::-webkit-scrollbar-track, .leader-photo .modal .images-select-wrapper::-webkit-scrollbar-track {
+        height: 10px;
+        background-color: #eee;
+        border-radius: 8px;
+    }
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper::-webkit-scrollbar-thumb, .leader-photo .modal .images-select-wrapper::-webkit-scrollbar-thumb{
+        background-color: #909090;
+        border-radius: 8px;
+        border: 2px solid #fff;
+    }
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper img, .leader-photo .modal .images-select-wrapper img{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid #5c5050;
+        object-fit: cover;
+    }
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper li:first-child .single-check, .leader-photo .modal .images-select-wrapper li:first-child .single-check{
+        visibility: visible;
+    }
+
+    @media (max-width: 575.98px) {
+        .mofa-cms-content.designation.leader-images .modal .images-select-wrapper, .leader-photo .mofa-cms-content.designation.leader-images .modal .images-select-wrapper{
+            -moz-column-gap: 8px;
+            column-gap: 8px;
+        }
+    }
+
+.mofa-cms-content.designation.leader-images .modal .images-select-wrapper .profile-image-checkbox, .leader-photo .modal .images-select-wrapper .profile-image-checkbox{
+    inset-inline-end: 3px;
+    top: 0px;
+    width: 23px;
+    height: 23px;
+    visibility: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #8A1538;
+    border-radius: 50%;
+    position: relative;
+}
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper .profile-image-checkbox::after, .leader-photo .modal .images-select-wrapper .profile-image-checkbox::after {
+        content: "✔";
+        color: white;
+        display: flex;
+        justify-content: center;
+        transform: rotate(20deg);
+        padding-top: 1px;
+        font-size: 14px;
+    }
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper .profile-image-checkbox:checked, .leader-photo .modal .images-select-wrapper .profile-image-checkbox:checked {
+        color: black;
+    }
+
+    .mofa-cms-content.designation.leader-images .modal .images-select-wrapper img, .leader-photo .modal .images-select-wrapper .profile-image-checkbox:checked{
+        max-width: auto;
+        cursor: pointer;
+    }
+
+    .mofa-cms-content.designation.parameter.resources .accordion-item {
+        border: 0;
+    }
+
+    .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-body {
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+    }
+
+    .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-inline-start:4px;
+    }
+        .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td.text-end{
+            text-align:end !important;
+
+        }
+
+        .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td .tick {
+            cursor: pointer;
+        }
+        .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td .tick.me-3{
+            margin-inline-end:1rem !important;
+            margin-inline-start:0 !important;
+        
+        }
+            .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td:nth-of-type(1) {
+        width: 380px;
+    }
+
+    .mofa-cms-content.designation.parameter.resources .accordion-item .map-table tr td:nth-of-type(3) {
+        text-align: end;
+    }
+
+    .mofa-cms-content.designation.parameter.resources .accordion-item .map-table .add-row {
+        display: none;
+    }
+
+        .mofa-cms-content.designation.parameter.resources .accordion-item .map-table .add-row .btn-add-row {
+            border: 1px solid #E9E9E9;
+   
+            padding-inline-start:15px;
+            padding-inline-end:15px;
+            padding-block-start:7px;
+            padding-block-end:11px;
+        }
+
+            .mofa-cms-content.designation.parameter.resources .accordion-item .map-table .add-row .btn-add-row:hover {
+                background-color: #f0f0f0;
+            }
+
+        .mofa-cms-content.designation.parameter.resources .accordion-item .map-table .add-row:last-child {
+            display: block;
+        }
+
+/*    .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header {
+        margin-top: 32px;
+        border-bottom: 1px solid #E9E9E9;
+    }*/
+
+/*        .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header button {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 16px 0;
+        }*/
+
+        .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header .accordion-button {
+            border: 0;
+        }
+
+        .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header .accordion-button::after {
+            border: 1px solid rgba(102, 112, 133, 0.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 35px;
+            width: 35px;
+            background-position: center;
+            background-size: 15px;
+            margin-inline-end:0;
+            margin-inline-start:auto;
+        }
+
+
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .search-box-wrapper img, .mofa-cms-content.designation.parameter.resources .addAssignDesignationModal .search-box-wrapper img {
+    top: 19px;
+    inset-inline-start: 15px;
+}
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body .not-found-create {
+    color: #00000099;
+}
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body .not-found-create a {
+    color: #8A1538;
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-footer .action-info {
+    color: #00000066;
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .search-box-wrapper .search-inputField, .mofa-cms-content.designation.parameter.resources .addAssignDesignationModal .search-box-wrapper .search-inputField{
+    padding-inline-start: 44px;
+}
+
+@media (max-width: 767.98px) {
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-header {
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body {
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+    }
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form {
+    row-gap: 0;
+}
+
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .checkboxes-wrapper {
+        margin-bottom: 25px;
+        max-height: 280px;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .checkboxes-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .checkboxes-wrapper::-webkit-scrollbar-track {
+            background: #EAEAEA;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .checkboxes-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            border: 0;
+        }
+
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox {
+        cursor: pointer;
+    }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox span {
+            font-size: 15px;
+        }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox] {
+            cursor: pointer;
+            position: relative;
+            width: 16px;
+            height: 16px;
+            border-radius: 0;
+            padding: 0;
+        }
+.mofa-cms-content.designation.assign-designation .designation-content .apply-changes-btn-wrapper, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .apply-changes-btn-wrapper{
+    display: flex;
+    justify-content: end;
+    margin-top: 55px;
+}
+.mofa-cms-content.designation.assign-designation .designation-content .apply-changes-btn-wrapper .apply-change-btn, .mofa-cms-content.designation.parameter.resources .country-state-designation .designation-content .apply-changes-btn-wrapper .apply-change-btn{
+    max-width: 145px;
+    padding: 17px 15px;
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox]::after {
+    content: "✔";
+    display: none;
+    color: #ffffff;
+    font-size: 11px;
+    position: absolute;
+    top: -1px;
+    inset-inline-start: 2px;
+    transform: rotate(10deg);
+}
+
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox].form-control:focus {
+        box-shadow: none !important;
+    }
+
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox]:checked {
+        background-color: #83273C;
+    }
+
+        .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-body form .label-checkbox input[type=checkbox]:checked::after {
+            display: block;
+        }
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-footer {
+    justify-content: start;
+}
+
+@media (max-width: 767.98px) {
+    .mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-footer {
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+    }
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-footer .cancel-button {
+    background: transparent;
+    color: #000000;
+}
+
+.mofa-cms-content.designation.assign-designation .addAssignDesignationModal .modal-title {
+    border-radius: 5px;
+    display: flex;
+    font-weight: 700;
+    font-size: 24px;
+    color: #8A1538;
+}
+
+.usertable .table-content-wrapper{
+    overflow: hidden !important;
+}
+
+.usertable .table-content{
+    overflow-x: auto;
+}
+
+.usertable .table-content::-webkit-scrollbar {
+    height: 10px;
+}
+
+.usertable .table-content::-webkit-scrollbar-track {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 8px;
+        
+}
+
+.usertable .table-content::-webkit-scrollbar-thumb {
+    background-color:#909090;
+    border-radius: 8px;
+    border: 2px solid #fff;
+}
+
+
+
+
+
+.parameter.resources .country-state-designation .designation .breadcrumb-item a {
+    color: #00000066
+}
+
+.parameter.resources .country-state-designation .designation .breadcrumb-item.active {
+    font-weight: 600;
+    font-size: 15px;
+    color: #8A1538;
+    line-height:25px;
+}
+
+
+
+
+
+.mofa-cms-content.designation.assign-designation.confidence-score .table tr td a {
+    color: #00000099;
+    text-decoration: underline;
+}
+.mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-ten {
+    background-color: #CF6767;
+}
+.mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-thirty {
+    background-color: #D99C51;
+}
+.mofa-cms-content.designation.assign-designation.confidence-score .table tr td button.bg-fifty {
+    background-color: #D6D977;
+}
+
+.mofa-cms-content.designation.leader-images .modal .images-select-wrapper .profile-image-checkbox::after, .leader-photo .modal .images-select-wrapper .profile-image-checkbox::after{
+    content: "✔";
+    color: white;
+    display: flex;
+    justify-content: center;
+    transform: rotate(20deg);
+    padding-top: 1px;
+    font-size: 14px;
+}
+
+.mofa-cms-content.designation.leader-images .modal .images-select-wrapper .profile-image-checkbox, .leader-photo .modal .images-select-wrapper .profile-image-checkbox {
+    inset-inline-end: 3px;
+    top: 0px;
+    width: 23px;
+    height: 23px;
+    visibility: hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #8A1538;
+    border-radius: 50%;
+    position: relative;
+}

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap">
+    </noscript>
+    <link rel="stylesheet" href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <noscript>
+      <link rel="stylesheet" href="assets/_css/app.css">
+    </noscript>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="dashboard bg-light"> 
+      <header class="bg-white">
+        <div class="logo"><img src="assets/images/logo-mofa.png" alt="" srcset=""></div>
+        <div class="notification-sec">
+          <div class="lang-notif"> 
+            <select id="country-select" style="width: 144px;">
+              <option value="us" data-image="assets/images/uk.png">English</option>
+              <option value="uk" data-image="assets/images/india-flag.png">India</option>
+              <option value="ar" data-image="assets/images/sa-flag.png">Arabic</option>
+            </select>
+            <div class="userIcon position-relative d-block d-sm-none">  <img src="assets/images/admin-user.png" alt="" srcset="">
+              <div class="userright-box bg-white position-absolute d-none"> 
+                <ul> 
+                  <li> <a href="">
+                       upated password </a></li>
+                  <li><a href="">
+                       logout</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="notification notifications position-relative">
+              <div class="notification-bill"> <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewbox="0 0 18 21" fill="none">
+                    <path d="M6.33333 18.4659C7.04101 19.0312 7.97553 19.375 9 19.375C10.0245 19.375 10.959 19.0312 11.6667 18.4659M1.50763 15.5568C1.08602 15.5568 0.85054 14.8944 1.10557 14.5264C1.69736 13.6725 2.26855 12.4201 2.26855 10.912L2.29296 8.72666C2.29296 4.66645 5.29581 1.375 9 1.375C12.7588 1.375 15.8058 4.71493 15.8058 8.83495L15.7814 10.912C15.7814 12.4305 16.3329 13.6897 16.9006 14.544C17.1458 14.9129 16.9097 15.5568 16.4933 15.5568H1.50763Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></a><span class="position-absolute notification-tag" id="notification-topbar-all-unread">
+                   9+</span></div>
+              <div class="recent-searches notification-box"> 
+                <div class="notifications-header"> 
+                  <div class="header"> 
+                    <h4>Notifications </h4>
+                  </div>
+                </div>
+                <ul class="nav nav-pills notification-nav-pills w-100 flex-nowrap" id="profiling-tabs" role="tablist">
+                  <li class="nav-item w-50" role="presentation">
+                    <button class="w-100 nav-link active" id="topbar-all-tab" data-bs-toggle="pill" data-bs-target="#topbar-all-pane" type="button" role="tab" aria-controls="topbar-all-pane" aria-selected="true">All <span class="notification-number" id="notification-topbar-number-all">
+                         9+ </span></button>
+                  </li>
+                  <li class="nav-item w-100" role="presentation">
+                    <button class="w-100 nav-link" id="topbar-country-tab" data-bs-toggle="pill" data-bs-target="#topbar-country-pane" type="button" role="tab" aria-controls="topbar-country-pane" aria-selected="false">Country Profiling <span class="notification-number d-none" id="notification-topbar-number-country"> </span></button>
+                  </li>
+                  <li class="nav-item w-100" role="presentation">
+                    <button class="w-100 nav-link" id="topbar-state-tab" data-bs-toggle="pill" data-bs-target="#topbar-state-pane" type="button" role="tab" aria-controls="topbar-state-pane" aria-selected="false">State Profiling <span class="notification-number d-none" id="notification-topbar-number-state"> </span></button>
+                  </li>
+                  <li class="nav-item w-100" role="presentation">
+                    <button class="w-100 nav-link" id="topbar-leader-tab" data-bs-toggle="pill" data-bs-target="#topbar-leader-pane" type="button" role="tab" aria-controls="topbar-leader-pane" aria-selected="false">Leader Profiling <span class="notification-number" id="notification-topbar-number-leader">
+                         9+</span></button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="profiling-tabs-content">
+                  <div class="tab-pane fade show active" id="topbar-all-pane" role="tabpanel" aria-labelledby="topbar-all-tab">
+                    <!-- Dynamic country profiling content will go here-->
+                    <div class="notification-items-wrapper">
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>The Confidence Score is 25% for First Deputy Prime Minister of Tajikistan. Take a look.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66937">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>The Confidence Score is 21% for Second Deputy Prime Minister of Tajikistan. Take a look.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66936">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>Leader Not Found</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66935">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="topbar-country-pane" role="tabpanel" aria-labelledby="topbar-country-pane">
+                    <!-- Dynamic country profiling content will go here-->
+                    <div class="notification-items-wrapper">
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">CP</span></div>
+                          </div>
+                          <div>
+                            <p>Country Profiling</p>
+                            <p>A new data for Confidence Score has been updated for  on 07/21/2025.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">1 months ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63546">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">CP</span></div>
+                          </div>
+                          <div>
+                            <p>Country Profiling</p>
+                            <p>A new data for Confidence Score has been updated for  on 07/21/2025.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">1 months ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63545">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">CP</span></div>
+                          </div>
+                          <div>
+                            <p>Country Profiling</p>
+                            <p>A new data for Confidence Score has been updated for  on 07/21/2025.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">1 months ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63544">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="topbar-state-pane" role="tabpanel" aria-labelledby="topbar-country-pane">
+                    <!-- Dynamic state profiling content will go here-->
+                    <div class="notification-items-wrapper">
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">SP</span></div>
+                          </div>
+                          <div>
+                            <p>State Profiling</p>
+                            <p>A new data for SafetyIndex has been updated for La Rioja on 07/22/2025.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">28 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63829">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">SP</span></div>
+                          </div>
+                          <div>
+                            <p>State Profiling</p>
+                            <p>A new data for CorruptionIndex has been updated for La Rioja on 07/22/2025.</p>
+                          </div>
+                          <div class="notif-action"><span class="notif-time">28 days ago</span>
+                            <div class="dropdown">
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63828">Mark as read</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between read">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">SP</span></div>
+                          </div>
+                          <div>
+                            <p>State Profiling</p>
+                            <p>A new data for Tiktok has been updated for La Rioja on 07/22/2025.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">28 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read disabled" style="pointer-events: none; opacity: 0.6;" data-id="63827">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="topbar-leader-pane" role="tabpanel" aria-labelledby="topbar-leader-pane">
+                    <!-- Dynamic leader profiling content will go here-->
+                    <div class="notification-items-wrapper">
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>The Confidence Score is 25% for First Deputy Prime Minister of Tajikistan. Take a look.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66937">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>The Confidence Score is 21% for Second Deputy Prime Minister of Tajikistan. Take a look.</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66936">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="notification-item d-flex justify-content-between">
+                        <div class="notification-content d-flex align-items-start gap-2">
+                          <div class="d-flex align-items-center gap-1"><span class="pointed"></span>
+                            <div class="name-wrapper d-flex align-items-center"><span class="name">LP</span></div>
+                          </div>
+                          <div>
+                            <p>Leader Profiling</p>
+                            <p>Leader Not Found</p>
+                          </div>
+                        </div>
+                        <div class="notif-action"><span class="notif-time">23 days ago</span>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/images/three-dots-icon.png" alt="Options"></button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item mark-as-read" href="#" data-id="66935">Mark as read</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="view-all-notifications position-sticky bottom-0 bg-white"> <a class="d-block text-center" href="/Notification/index">View all </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin d-none d-sm-flex"> <img src="assets/images/admin-user.png" alt="" srcset="">
+            <select id="two-line-select" style="width: 250px;">
+              <option value="1" data-subtext="MOFA Administration">Ahmad</option>
+              <option value="2" data-subtext="">Update password</option>
+              <option value="3" data-subtext="">logout</option>
+            </select>
+          </div>
+        </div>
+      </header>
+      <div class="dashboard-content"> 
+        <div> 
+          <div class="history position-fixed">
+            <div class="hide-show-menu position-absolute"> <i class="fa-solid fa-angles-left"> </i></div>
+            <div class="history-content min-vh-100"> 
+              <h3>Menu </h3><a class="aside-link d-flex align-items-center justify-content-between" href="dashboard.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/home-01.png" alt="" srcset=""><span>Dashboard </span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="country-leader-profiling.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/story.png" alt="" srcset=""><span>Country & leader Profiling</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="designation.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/clock-plus.png" alt="" srcset=""><span>Designation</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="assignDesignation.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/clock-plus.png" alt="" srcset=""><span>Assign Designations</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="resources.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/resources.png" alt="" srcset=""><span>Resources</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between active" href="leader-images.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/leader-images-icon.png" alt="" srcset=""><span>Profile Pictures</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/level.png" alt="" srcset=""><span>Confidence Score</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="roles.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/parameter-icon.png" alt="" srcset=""><span>Roles</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a><a class="aside-link d-flex align-items-center justify-content-between" href="users.html">
+                <div class="aside-link-content d-flex align-items-center gap-2">  <img src="assets/images/user.png" alt="" srcset=""><span>Users</span></div><img src="assets/images/chevron-right.png" alt="" srcset=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="mofa-cms-content designation assign-designation leader-images">
+          <ol class="breadcrumb align-items-center"> 
+            <li class="breadcrumb-item" aria-current="page"><img src="assets/images/dashboard-icon.png" alt="" srcset="">Dashboard</li>
+            <li class="breadcrumb-item active" aria-current="page">All Designations</li>
+          </ol>
+          <div class="recent-searches assign-designation-filter"> 
+            <form action="">
+              <div class="search-box-wrapper position-relative w-100"> <img class="search-icon position-absolute" src="assets/images/search-icon.png" alt="" srcset="">
+                <input class="search-box form-control" id="inputSearchDesi" type="text" placeholder="Search">
+              </div>
+              <select class="choose-country form-control" id="chooseCountry" style="144px">
+                <option value="" data-image="">Select Country </option>
+                <option value="" data-image="assets/images/qatar-02.png">Afghanistan</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/45b1cd64-d34d-4320-b3dc-8f682d9d02f7_al.png">Albania</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/0fd7a667-6bbf-401d-b55a-0a25e2212665_dz.png">Algeria</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/8b68ce1f-f633-4257-b3a4-850f75e43995_ao.png">Andorra</option>
+              </select>
+              <select class="choose-state form-control" id="chooseState" style="144px">
+                <option value="" data-image="">Select State </option>
+                <option value="" data-image="assets/images/qatar-02.png">Afghanistan</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/45b1cd64-d34d-4320-b3dc-8f682d9d02f7_al.png">Albania</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/0fd7a667-6bbf-401d-b55a-0a25e2212665_dz.png">Algeria</option>
+                <option value="" data-image="https://cpd.mofa.gov.qa/mofa-lp-dev/Media/Flags/8b68ce1f-f633-4257-b3a4-850f75e43995_ao.png">Andorra</option>
+              </select>
+              <button class="assign-designation add-mofa-role">Clear Filters</button>
+            </form>
+            <div class="modal fade" id="addDesignationModal" tabindex="-1" aria-labelledby="addDesignationModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addDesignationModalLabel">Add New Designation</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="#">
+                      <label for="designation"><span>Designation (EN)</span>
+                        <input class="form-control" id="designation" type="text" name="designation" placeholder="Enter Name">
+                      </label>
+                      <label for="designationAr"><span>Designation (Ar)</span>
+                        <input class="form-control" id="designationAr" type="text" name="designationAr" placeholder="أدخل الاسم">
+                      </label>
+                      <label class="label-checkbox d-flex align-items-center" for="isCountry">
+                        <input class="country-name form-control" id="isCountry" type="checkbox" name="isCountry" value="false"><span>Country</span>
+                      </label>
+                      <label class="label-checkbox d-flex align-items-center" for="isState">
+                        <input class="state-name form-control" id="isState" type="checkbox" name="isState" value="false"><span>State</span>
+                      </label>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn" id="addDesignationBtn" type="button">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="editDesignationModal" aria-labelledby="editDesignationModalLabel" aria-hidden="false">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editDesignationModalLabel">Select Image</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="profile-image-wrapper d-flex justify-content-center" id="profile-image-wrapper"><img src="https://www.theborneopost.com/newsimages/2023/09/FW1325467_KL27_01092023_MUZIUM-lpr.jpg" alt="" style="max-width:300px"></div>
+                    <div class="h5">Select Primary Image</div>
+                    <ul class="images-select-wrapper d-flex" id="editImagesSelection">
+                      <li>
+                        <label class="position-relative" for="myCheckbox12055-0">
+                          <input class="profile-image-checkbox position-absolute single-check" id="myCheckbox12055-0" name="selectedImage" type="checkbox" value="https://www.theborneopost.com/newsimages/2023/09/FW1325467_KL27_01092023_MUZIUM-lpr.jpg" checked=""><img class="myCheckbox12055-0" src="https://www.theborneopost.com/newsimages/2023/09/FW1325467_KL27_01092023_MUZIUM-lpr.jpg" onclick="selectOnlyThis('12055-0', 'https://www.theborneopost.com/newsimages/2023/09/FW1325467_KL27_01092023_MUZIUM-lpr.jpg')" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 120px; height: 120px; cursor: pointer;">
+                        </label>
+                      </li>
+                      <li>
+                        <label class="position-relative" for="myCheckbox12055-1">
+                          <input class="profile-image-checkbox position-absolute single-check" id="myCheckbox12055-1" name="selectedImage" type="checkbox" value="https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2024/08/06/227717.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6"><img class="myCheckbox12055-1" src="https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2024/08/06/227717.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6" onclick="selectOnlyThis('12055-1', 'https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2024/08/06/227717.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6')" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 120px; height: 120px; cursor: pointer;">
+                        </label>
+                      </li>
+                      <li>
+                        <label class="position-relative" for="myCheckbox12055-2">
+                          <input class="profile-image-checkbox position-absolute single-check" id="myCheckbox12055-2" name="selectedImage" type="checkbox" value="https://www.theborneopost.com/newsimages/2023/11/aaron-ago.jpeg"><img class="myCheckbox12055-2" src="https://www.theborneopost.com/newsimages/2023/11/aaron-ago.jpeg" onclick="selectOnlyThis('12055-2', 'https://www.theborneopost.com/newsimages/2023/11/aaron-ago.jpeg')" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 120px; height: 120px; cursor: pointer;">
+                        </label>
+                      </li>
+                      <li>
+                        <label class="position-relative" for="myCheckbox12055-3">
+                          <input class="profile-image-checkbox position-absolute single-check" id="myCheckbox12055-3" name="selectedImage" type="checkbox" value="https://apicms.thestar.com.my/uploads/images/2024/11/28/3039876.jpg"><img class="myCheckbox12055-3" src="https://apicms.thestar.com.my/uploads/images/2024/11/28/3039876.jpg" onclick="selectOnlyThis('12055-3', 'https://apicms.thestar.com.my/uploads/images/2024/11/28/3039876.jpg')" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 120px; height: 120px; cursor: pointer;">
+                        </label>
+                      </li>
+                      <li>
+                        <label class="position-relative" for="myCheckbox12055-4">
+                          <input class="profile-image-checkbox position-absolute single-check" id="myCheckbox12055-4" name="selectedImage" type="checkbox" value="https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2025/03/17/266070.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6"><img class="myCheckbox12055-4" src="https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2025/03/17/266070.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6" onclick="selectOnlyThis('12055-4', 'https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2025/03/17/266070.JPG&amp;w=1000&amp;q=100&amp;f=jpg&amp;t=6')" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 120px; height: 120px; cursor: pointer;">
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn" id="updateImageBtn" type="button" data-leader-id="" data-leader-img="">Save </button>
+                    <button class="btn bg-transparent text-black" type="button" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title fs-5" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">Are you sure you want to delete this designation?</div>
+                  <div class="modal-footer">
+                    <button class="btn" id="confirmDeleteBtn" type="button">Delete</button>
+                    <button class="btn bg-transparent text-black" data-bs-dismiss="modal" type="button">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-content-wrapper">
+              <div class="table-content">
+                <table class="nowrap table" id="designationDatatable" style="width:100%">
+                  <thead>
+                    <th>Leaders</th>
+                    <th>Designation</th>
+                    <th>Profile photo</th>
+                    <th>Actions</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Abdelhak Saihi</td>
+                      <td>Miniter Of Health, Population And Hospital Reform</td>
+                      <td><img src="https://wikiwandv2-19431.kxcdn.com/_next/image?url=https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Abdelhak-Saihi_%2528cropped%2529.png/640px-Abdelhak-Saihi_%2528cropped%2529.png&amp;amp;w=640&amp;amp;q=50" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;"></td>
+                      <td><a class="me-3" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editDesignationModal"> <img src="assets/images/edit-03.png" alt="Edit"></a></td>
+                    </tr>
+                    <tr>
+                      <td>Abdelhak Saihi</td>
+                      <td>Miniter Of Health, Population And Hospital Reform</td>
+                      <td><img src="https://wikiwandv2-19431.kxcdn.com/_next/image?url=https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Abdelhak-Saihi_%2528cropped%2529.png/640px-Abdelhak-Saihi_%2528cropped%2529.png&amp;amp;w=640&amp;amp;q=50" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;"></td>
+                      <td><a class="me-3" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editDesignationModal"> <img src="assets/images/edit-03.png" alt="Edit"></a></td>
+                    </tr>
+                    <tr>
+                      <td>Abdelhak Saihi</td>
+                      <td>Miniter Of Health, Population And Hospital Reform</td>
+                      <td><img src="https://wikiwandv2-19431.kxcdn.com/_next/image?url=https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Abdelhak-Saihi_%2528cropped%2529.png/640px-Abdelhak-Saihi_%2528cropped%2529.png&amp;amp;w=640&amp;amp;q=50" onerror="this.onerror=null; this.src='/assets/images/logo-icon.png'" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;"></td>
+                      <td><a class="me-3" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editDesignationModal"> <img src="assets/images/edit-03.png" alt="Edit"></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- Success Modal -->
+      <!-- Success Modal-->
+      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="successModalLabel">Success</h5>
+              <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="successfullyResourceTxt">  </div>
+            <div class="modal-footer">
+              <button class="btn" id="closeSuccessModal" type="button" data-bs-dismiss="modal">Close        </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer> 
+      <div class="right-reserved"> &copy; Ministry of Foreign Affairs. All rights reserved 2024</div>
+      <ul class="footer-navlinks"> 
+        <li> <a href="">Copyright Policy </a></li>
+        <li> <a href="">Privacy Policy </a></li>
+        <li> <a href="">Accessibiliy </a></li>
+        <li> <a href="">Contact Us</a></li>
+        <li> <a href="#">
+             <i class="fa-solid fa-arrow-up"></i></a></li>
+      </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"> </script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"> </script>
+    <script src="assets/js/date-range-custom.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+    <script type="importmap" defer>
+      {
+          "imports": {
+              "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+              "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+          }
+      }
+    </script>
+    <script type="module" defer>
+      import * as bootstrap from 'bootstrap'
+      //- new bootstrap.Popover(document.getElementById('popoverButton'))
+      
+    </script>
+    <script>
+      $(function(){
+          $('[data-bs-toggle="tooltip"]').tooltip();
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+p, h6 {
+	a {
+		color: $primary;
+		&:hover {
+			color: $primary;
+			text-decoration: underline;
+		}
+	}
+}
+body {
+	background-color: rgb(255, 255, 255);
+	.h2, .h3, .h4, .h5, .h6 {
+		font-weight: 500;
+	}
+}
+
+div.dt-container.dt-empty-footer tbody > tr:last-child > *
+ {
+    border-bottom: 0;
+}
+
+.breadcrumb .breadcrumb-item > img
+ {
+    margin-inline-end: 10px;
+    margin-bottom: 3px;
+}
+
+// $color-mode-type: data;
+
+// @include color-mode(dark) {
+//   p {
+//     color: var(--bs-primary-text);
+//     background-color: var(--bs-primary-bg-subtle);
+//   }
+// }
+

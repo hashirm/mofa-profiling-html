@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25.048" height="15.94" viewBox="0 0 25.048 15.94">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="NoPath_-_Copy_2_" data-name="NoPath - Copy (2)" width="25.048" height="15.94" rx="3" fill="#707070"/>
+    </clipPath>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 358 141">
+      <image width="358" height="141" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWYAAACNCAMAAACzDCDRAAAAeFBMVEWNGz3//v+KEDeLFTmIADD//f79+fv79feMGTv06e2rWnH58fSJADOcOVbLnamWLk3o0djHlaOwaXzt3eHdwMi8gJHVrrm4eouhSmKnU2vy4+jcu8XAi5mOEDufQVzjx8+3cISSI0WqYHSGACXFkaCbQFnpzte+fI9dIrXtAAAC4UlEQVR4nO3c7XLaMBCFYVsJTsCGUMxnIBAnaXv/dxjjkHba/+fsjPU+l3BGI1urXRWl2WT5YzV/ae6KvLhj7j20602fdMop6oCYB+12t2/u091jdAAeUTGXZTVdLg5PKaXoCBziYh48H0+zHPaP4Jj7b2LdblfnokmPY94/olP+Mr0sVt3LiLeP6ID/qOrjazfaBR2d7reH9njaR4ehEx3vVTW9bA5dGvOZJTrisl4udl2Txv0FDI15Uj8fX89dyuCQEhfydP3x1uVyDgxJeNIfAGf9Kk5ZRHwVEHK93ez7ZTzuzfg/7oyr4/n9vclnGd+4Y+73i+2saDIoY/zDHfNX1pfF2/y+yePrNwiJuVe36928yOFfbhAV81XVn0z6RZ1D1JExl0Nt/+PwlJoRF+cGwTFfVe32tB95bT8645u6Xax+dtFh6ETn+1f16zf1ZjFWsxx7sz5i/jT0Gd/+mzMoIkVFzClQj5qGPGEqdA7Um124PTHhLtCHm20T+jR86DpyoYfOho5QD/qb9ejWV2P2xIBJKjXmAg2YclVjZluPFwiIWccdc8mm4cQn0IQfOh+OJyYctn0oHblQCHWgrC/HJZUeV65qNBAY0A6jRnOXAa2KejTeWtBGbsyaoQgTRnxseOjBljTjly4ME9swGu/CQw96rGY59mZ9xPxp6DPmoQc1ToF61DTkCVOhc6De7MLtiQl3gT7cbJvQp+FD15ELPXQ2dIR60N+sR7e+GrMnBkxSqTEXaMCUqxoz23q8QEDMOu6YSzYNJz6BJvzQ+XA8MeGw7UPpyIVCqANlfTkuqfS4clWjgcCAdhg1mrsMaFXUo/HWgjZyY9YMRZgw4mPDQw+2pBm/dGGY2IbReBceetBjNcuxN+sj5k9DnzEPPahxCtSjpiFPmAqdA/VmF25PTLgL9OFm24Q+DR+6jlzoobOhI9SD/mY9uvXVmD0xYJJKjblAA6Zc1ZjZ1svzBYJPYxyJdFHgXrYAAAAASUVORK5CYII="/>
+    </pattern>
+  </defs>
+  <g id="Group_15945" data-name="Group 15945" transform="translate(-19.484 -19.03)">
+    <g id="Mask_Group_91" data-name="Mask Group 91" transform="translate(19.484 19.03)" clip-path="url(#clip-path)">
+      <rect id="NoPath_-_Copy_2_2" data-name="NoPath - Copy (2)" width="39.849" height="15.695" rx="2" transform="translate(-3.416)" fill="url(#pattern)"/>
+    </g>
+  </g>
+</svg>

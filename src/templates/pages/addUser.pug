@@ -1,0 +1,211 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap", as="style", onload="this.onload=null;this.rel=\'stylesheet\'")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+        link(rel="stylesheet", href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css")
+
+        noscript
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+
+        link(rel="stylesheet", href="assets/_css/app.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        //- link(rel="stylesheet", href="assets/css/app.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');")
+        noscript
+            link(rel="stylesheet", href="assets/_css/app.css")
+            //- link(rel="stylesheet", href="assets/css/app.min.css")
+        title Dashboard
+    body
+        .dashboard.bg-light 
+            include ../partials/_header
+            .dashboard-content 
+                div 
+                    .history.position-fixed
+                        .hide-show-menu.position-absolute 
+                            i.fa-solid.fa-angles-left 
+                        .history-content.min-vh-100 
+                            h3 Menu 
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="./dashboard.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/home-01.png", alt="", srcset="")  
+                                    span Dashboard 
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="./country-leader-profiling.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/story.png", alt="", srcset="")  
+                                    span Country & leader Profiling
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="designation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Designation
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="assignDesignation.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/clock-plus.png", alt="", srcset="")  
+                                    span Assign Designations
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="resources.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/resources.png", alt="", srcset="")  
+                                    span Resources
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leader-images.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/leader-images-icon.png", alt="", srcset="")  
+                                    span Profile Pictures
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="leaders.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/level.png", alt="", srcset="")  
+                                    span Confidence Score
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between(href="roles.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/parameter-icon.png", alt="", srcset="")  
+                                    span Roles
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")
+                            a.aside-link.d-flex.align-items-center.justify-content-between.active(href="users.html")
+                                .aside-link-content.d-flex.align-items-center.gap-2   
+                                    img(src="assets/images/user.png", alt="", srcset="")  
+                                    span Users
+                                img(src="assets/images/chevron-right.png", alt="", srcset="")  
+                .mofa-cms-content.designation.assign-designation.leader-images.usertable 
+                    ol.breadcrumb.align-items-center 
+                        li.breadcrumb-item(aria-current="page")
+                            img(src="assets/images/dashboard-icon.png", alt="", srcset="")
+                            | Dashboard
+                        li.breadcrumb-item(aria-current="page")
+                            | Users
+                        li.breadcrumb-item.active(aria-current="page")
+                            | Create
+                    .row 
+                        .col-12 
+                            .bg-white.radius-18.add-user.card 
+                                .card-body 
+                                    .row.align-items-center.justify-content-center.g-0.gy-0 
+                                        .col-lg-8 
+                                            .add-user-form 
+                                                form(action="" id="submitdocumentForm" method="post")
+                                                    .validation-summary-valid.text-danger.mb-3.validation-summary-valid
+                                                        ul 
+                                                            li(style="display:none")
+                                                    .row 
+                                                        .col-12 
+                                                            p.mb-3.mandartory-field 
+                                                                span.text-primary 
+                                                                    | Note :
+                                                                small 
+                                                                    | Fields marked width 
+                                                                span.text-primary *
+                                                                    | are mandatory fields 
+                                                            .row 
+                                                                .col-md-6 
+                                                                    .form-group.mb-3 
+                                                                        label(for="FirstName")
+                                                                            | First Name 
+                                                                            span *
+                                                                        input.form-control(type="text" placeholder="First Name" id="First Name" name="First Name")
+                                                                        span.error-validation.text-danger.field-validation-valid
+                                                                .col-md-6
+                                                                    .form-group.mb-3 
+                                                                        label(for="LastName")
+                                                                            | Last Name 
+                                                                            span * 
+                                                                        input.form-control(placeholder="Last Name" type="text")
+                                                                        span.error-validation.text-danger.field-validation-valid 
+                                                            .row 
+                                                                .col-md-6 
+                                                                    .form-group.mb-3 
+                                                                        label(for="FirstName")
+                                                                            | Username
+                                                                            span *
+                                                                        input.form-control(type="text" placeholder="First Name" id="First Name" name="First Name")
+                                                                        span.error-validation.text-danger.field-validation-valid
+                                                                .col-md-6
+                                                                    .form-group.mb-3 
+                                                                        label(for="LastName")
+                                                                            | Email
+                                                                            span * 
+                                                                        input.form-control(placeholder="Last Name" type="text")
+                                                                        span.error-validation.text-danger.field-validation-valid 
+                                                            .row 
+                                                                .col-md-6 
+                                                                    .form-group.mb-3 
+                                                                        label(for="FirstName")
+                                                                            | Password
+                                                                            span *
+                                                                        input.form-control(type="text" placeholder="First Name" id="First Name" name="First Name")
+                                                                        span.error-validation.text-danger.field-validation-valid
+                                                                .col-md-6
+                                                                    .form-group.mb-3 
+                                                                        label(for="LastName")
+                                                                            | Confirm Password
+                                                                            span * 
+                                                                        input.form-control(placeholder="Last Name" type="text")
+                                                                        span.error-validation.text-danger.field-validation-valid
+                                                                            | Password Mismatch 
+                                                            .row 
+                                                                .col-md-6 
+                                                                    .form-group.mb-3 
+                                                                        label.mb-2(for="roles")
+                                                                            | Role 
+                                                                            span *
+                                                                        .checkboxes-wrapper(id="roleList")
+                                                                            label.label-checkbox.d-flex.align-items-center.label-designation(for="")
+                                                                                input.governor.me-2.w-auto(type="checkbox" name="role" value="MoFA Users")
+                                                                                span.designation-label-text MoFA Users 
+                                                                            label.label-checkbox.d-flex.align-items-center.label-description(for="")
+                                                                                input.governor.me-2.w-auto(type="checkbox" name="role" value="SuperAdmin" id="")
+                                                                                span Super Admin
+                                                            .d-flex.flex-wrap.gap-2.border-line.start-button 
+                                                                .btn.assign-designation.add-mofa-role 
+                                                                    | Cancel 
+                                                                button.btn.assign-designation.add-mofa-role(type="submit")
+                                                                    | Submit
+                                                                                                    
+
+
+                                                                    
+
+
+
+                                                        
+
+
+        include ../partials/_footer
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js") 
+        script(src='https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js") 
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js") 
+        script(src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js") 
+        script(src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js") 
+        script(src="https://cdn.datatables.net/2.2.2/js/dataTables.js") 
+        script(src="assets/js/date-range-custom.js")
+        script(src="assets/js/dashboard.js")
+   
+        script(src="assets/js/custom.js")
+        script(async, src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js", crossorigin="anonymous")
+        script(type="importmap" defer).
+            {
+                "imports": {
+                    "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+                    "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+                }
+            }
+        script(type="module" defer).
+            import * as bootstrap from 'bootstrap'
+            //- new bootstrap.Popover(document.getElementById('popoverButton'))
+
+        script.
+            $(function(){
+                $('[data-bs-toggle="tooltip"]').tooltip();
+            })
