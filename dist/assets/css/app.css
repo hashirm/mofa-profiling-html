@@ -2127,6 +2127,17 @@ div.dt-container .dt-info {
   align-items: center;
   cursor: pointer;
 }
+.dashboard .history .hide-show-menu i.change-dir {
+  transform: rotate(180deg);
+}
+.dashboard .history.hide {
+  width: 23px;
+}
+@media (min-width: 576px) {
+  .dashboard .history.hide {
+    width: 60px;
+  }
+}
 .dashboard .country-leader {
   padding: 24px 22px 24px 22px;
 }
@@ -2304,6 +2315,14 @@ div.dt-container .dt-info {
   inset-inline-start: 18%;
   transform: rotate(12deg);
 }
+.dashboard .country-leader .country-leader-content.designation-columns form .checkbox-grid, .dashboard .country-leader .country-leader-content.stateDesignation-columns form .checkbox-grid {
+  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+}
+@media (max-width: 575.98px) {
+  .dashboard .country-leader .country-leader-content.designation-columns form .checkbox-grid, .dashboard .country-leader .country-leader-content.stateDesignation-columns form .checkbox-grid {
+    grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
+  }
+}
 .dashboard .next {
   text-align: end;
   margin-top: 20px;
@@ -2373,6 +2392,14 @@ div.dt-container .dt-info {
     padding: 19px 30px;
   }
 }
+.dashboard .dashboard-content.wide {
+  grid-template-columns: 23px auto;
+}
+@media (min-width: 576px) {
+  .dashboard .dashboard-content.wide {
+    grid-template-columns: 60px auto;
+  }
+}
 
 .aside-link {
   color: white;
@@ -2426,6 +2453,10 @@ div.dt-container .dt-info {
   padding: 10px 30px;
 }
 
+html[dir=rtl] .dashboard .history .history-content .aside-link img {
+  transform: scaleX(-1);
+}
+
 .dashboard .history .history-content .accordion-button {
   background-color: rgba(0, 0, 0, 0.58);
   color: white;
@@ -2474,9 +2505,31 @@ div.dt-container .dt-info {
     top: 62px;
   }
 }
+.dashboard .history .hide-show-menu i.change-dir {
+  transform: rotate(180deg);
+}
+
+.dashboard .history.hide {
+  width: 23px;
+}
+
+@media (min-width: 576px) {
+  .dashboard .history.hide {
+    width: 60px;
+  }
+}
 @media (max-width: 991px) {
   .dashboard .history {
     width: 250px;
+  }
+}
+.dashboard .dashboard-content.wide {
+  grid-template-columns: 100%;
+}
+
+@media (min-width: 576px) {
+  .dashboard .dashboard-content.wide {
+    grid-template-columns: 60px auto;
   }
 }
 header {
@@ -4941,6 +4994,10 @@ footer ul a {
     margin: 0 auto;
   }
 }
+.lineChart-select ~ .select2 {
+  width: 155px !important;
+}
+
 /*--------------confidence score css end --------------*/
 /*====success error modal=====*/
 .successModal .modal-header .btn-close, .errorModal .modal-header .btn-close {

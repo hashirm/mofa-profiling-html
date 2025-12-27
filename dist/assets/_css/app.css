@@ -12320,6 +12320,7 @@ div.dt-container .dt-info {
 }
 
 /* purgecss end ignore */
+/* purgecss start ignore */
 .dashboard .dashboard-content {
   display: grid;
   grid-template-columns: 315px auto;
@@ -12804,6 +12805,7 @@ html[dir=rtl] .dashboard .history .history-content .aside-link img {
     grid-template-columns: 60px auto;
   }
 }
+/* purgecss end ignore */
 /* purgecss start ignore */
 header {
   height: auto;
@@ -15607,6 +15609,10 @@ footer ul a {
     margin: 0 auto;
   }
 }
+.lineChart-select ~ .select2 {
+  width: 155px !important;
+}
+
 /*--------------confidence score css end --------------*/
 /*====success error modal=====*/
 .successModal .modal-header .btn-close, .errorModal .modal-header .btn-close {
