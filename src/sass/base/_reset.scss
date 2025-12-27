@@ -67,7 +67,7 @@ h1, .h1 {
    
 }
 
-
+ /* purgecss start ignore */
 
 // language select
 
@@ -82,6 +82,8 @@ h1, .h1 {
   #country-select{
 	padding:10px;
   }
+
+ 
 .select2-container .select2-selection--single{
 	height:49px;
 	border-radius: 8px;
@@ -107,6 +109,8 @@ line-height: 49px;
 .select2-results__option{
 	padding: 0;
 }
+
+
 
 .admin{
 	.select2-container--default .select2-results__option {
@@ -183,6 +187,8 @@ line-height: 49px;
 .select2-search--dropdown{
 	padding: 0;
 }
+
+/* purgecss end ignore */
 
 // .progress{
 // 	--bs-progress-height: 3rem;

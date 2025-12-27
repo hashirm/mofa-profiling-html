@@ -1,5 +1,7 @@
+/* purgecss start ignore */
+
 header{
-       
+      
     height: auto;
     display: flex;
     flex-direction: column;
@@ -141,3 +143,9 @@ header{
 
 }
 
+.select2-container .select2-selection--single{
+    height: 49px;
+    border-radius: 8px;
+}
+
+/* purgecss end ignore */

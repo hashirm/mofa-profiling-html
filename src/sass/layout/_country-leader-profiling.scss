@@ -2,7 +2,6 @@
 
 
 // country-leader-profiling
-
 .dashboard{
     .next{
         text-align: end;
@@ -71,17 +70,19 @@
 
 }
 
+/* purgecss start ignore */
 
 .select2-dropdown {
     z-index: 9999999999999999999;
 }
+/* purgecss end ignore */
 
 
-    .dashboard .next .accordion-download .accordion-collapse {
+.dashboard .next .accordion-download .accordion-collapse {
         border: 1px solid rgb(208, 213, 221);
         margin-top: 10px;
         border-radius: 6px;
-    }
+}
 
     .dashboard .next .accordion-download .accordion-button {
         background-color: black;
@@ -225,10 +226,14 @@
     width: 153px !important;
 }
 
+/* purgecss start ignore */
+
 .select2-container .select2-selection--single{
     height: 49px;
     border-radius: 8px;
 }
+
+
  
 .search-box .select2-container img {
     padding: 6px 5px 8px 11px;
@@ -698,11 +703,9 @@ div.dt-container.dt-empty-footer tbody > tr:last-child > *{
     padding-inline-end: 20px;
 }
 
-/*    .mofa-cms-content.designation.resources .recent-searches .tab-content {
-        height: 450px;
-        overflow: auto;
-        padding-inline-end: 20px;
-    }*/
+
+
+
 
         .mofa-cms-content.designation.resources .recent-searches .tab-content::-webkit-scrollbar {
             width: 6px;
@@ -1038,16 +1041,7 @@ div.dt-container.dt-empty-footer tbody > tr:last-child > *{
             display: block;
         }
 
-/*    .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header {
-        margin-top: 32px;
-        border-bottom: 1px solid #E9E9E9;
-    }*/
 
-/*        .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header button {
-            font-size: 20px;
-            font-weight: 600;
-            padding: 16px 0;
-        }*/
 
         .mofa-cms-content.designation.parameter.resources .accordion-item .accordion-header .accordion-button {
             border: 0;
@@ -1283,3 +1277,4 @@ div.dt-container.dt-empty-footer tbody > tr:last-child > *{
     border-radius: 50%;
     position: relative;
 }
+/* purgecss end ignore */

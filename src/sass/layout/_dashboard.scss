@@ -1,4 +1,6 @@
 
+/* purgecss start ignore */
+
 .dashboard .mofa-cms-content {
     padding: 37px 54px;
     overflow:hidden;
@@ -282,3 +284,12 @@ div.dt-container .dt-info {
  {
     margin-top: 30px;
 }
+
+
+.select2-dropdown {
+    z-index: 9999999999999999999;
+}
+
+
+
+/* purgecss end ignore */
