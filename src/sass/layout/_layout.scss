@@ -425,6 +425,9 @@
     width: 315px;
     transition: width 500ms ease;
     z-index: 99;
+    @include media-breakpoint-down(md){
+        z-index:1;
+    }
 
 }
 

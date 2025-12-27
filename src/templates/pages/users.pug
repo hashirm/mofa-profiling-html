@@ -165,103 +165,104 @@ html(lang="en")
                                     .modal-footer
                                         button#confirmDeleteBtn.btn(type='button') Delete
                                         button.btn.bg-transparent.text-black(data-bs-dismiss='modal' type='button') Cancel
+                        .table-content-wrapper
+                            .table-content
+                                table#usersTable.table.nowrap(style='width:100%')
+                                    thead
+                                        th First Name
+                                        th Last Name
+                                        th Username
+                                        th Email
+                                        th Created On
+                                        th.text-center Actions
+                                    tbody
+                                        tr
+                                            td Super
+                                            td Admin
+                                            td superadmin
+                                            td superadmin@clp.com
+                                            td 20 November 2024
+                                            td
+                                                .d-flex.gap-3.user-action.justify-content-center.align-items-center
+                                                    a.btn(href="#")
+                                                        i.fa.fa-eye
+                                                    button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
+                                                        img(src='/assets/images/edit-03.png' alt='')
+                                                    button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
+                                                        img(src='/assets/images/trash-02.png' alt='')
+                                                    .form-check 
+                                                        input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
+                                                        label(for="" class="form-check-label") Active
+                                        tr
+                                            td Super
+                                            td Admin
+                                            td superadmin
+                                            td superadmin@clp.com
+                                            td 20 November 2024
+                                            td
+                                                .d-flex.gap-3.user-action.justify-content-center.align-items-center
+                                                    a.btn(href="#")
+                                                        i.fa.fa-eye
+                                                    button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
+                                                        img(src='/assets/images/edit-03.png' alt='')
+                                                    button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
+                                                        img(src='/assets/images/trash-02.png' alt='')
+                                                    .form-check 
+                                                        input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
+                                                        label(for="" class="form-check-label") Active
+                                        tr
+                                            td Super
+                                            td Admin
+                                            td superadmin
+                                            td superadmin@clp.com
+                                            td 20 November 2024
+                                            td
+                                                .d-flex.gap-3.user-action.justify-content-center.align-items-center
+                                                    a.btn(href="#")
+                                                        i.fa.fa-eye
+                                                    button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
+                                                        img(src='/assets/images/edit-03.png' alt='')
+                                                    button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
+                                                        img(src='/assets/images/trash-02.png' alt='')
+                                                    .form-check 
+                                                        input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
+                                                        label(for="" class="form-check-label") Active
+                                        tr
+                                            td Super
+                                            td Admin
+                                            td superadmin
+                                            td superadmin@clp.com
+                                            td 20 November 2024
+                                            td
+                                                .d-flex.gap-3.user-action.justify-content-center.align-items-center
+                                                    a.btn(href="#")
+                                                        i.fa.fa-eye
+                                                    button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
+                                                        img(src='/assets/images/edit-03.png' alt='')
+                                                    button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
+                                                        img(src='/assets/images/trash-02.png' alt='')
+                                                    .form-check 
+                                                        input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
+                                                        label(for="" class="form-check-label") Active
+                                        tr
+                                            td Super
+                                            td Admin
+                                            td superadmin
+                                            td superadmin@clp.com
+                                            td 20 November 2024
+                                            td
+                                                .d-flex.gap-3.user-action.justify-content-center.align-items-center
+                                                    a.btn(href="#")
+                                                        i.fa.fa-eye
+                                                    button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
+                                                        img(src='/assets/images/edit-03.png' alt='')
+                                                    button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
+                                                        img(src='/assets/images/trash-02.png' alt='')
+                                                    .form-check 
+                                                        input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
+                                                        label(for="" class="form-check-label") Active
 
-                        table#usersTable.table.nowrap(style='width:100%')
-                            thead
-                                th First Name
-                                th Last Name
-                                th Username
-                                th Email
-                                th Created On
-                                th.text-center Actions
-                            tbody
-                                tr
-                                    td Super
-                                    td Admin
-                                    td superadmin
-                                    td superadmin@clp.com
-                                    td 20 November 2024
-                                    td
-                                        .d-flex.gap-3.user-action.justify-content-center.align-items-center
-                                            a.btn(href="#")
-                                                i.fa.fa-eye
-                                            button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
-                                                img(src='/assets/images/edit-03.png' alt='')
-                                            button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
-                                                img(src='/assets/images/trash-02.png' alt='')
-                                            .form-check 
-                                                input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
-                                                label(for="" class="form-check-label") Active
-                                tr
-                                    td Super
-                                    td Admin
-                                    td superadmin
-                                    td superadmin@clp.com
-                                    td 20 November 2024
-                                    td
-                                        .d-flex.gap-3.user-action.justify-content-center.align-items-center
-                                            a.btn(href="#")
-                                                i.fa.fa-eye
-                                            button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
-                                                img(src='/assets/images/edit-03.png' alt='')
-                                            button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
-                                                img(src='/assets/images/trash-02.png' alt='')
-                                            .form-check 
-                                                input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
-                                                label(for="" class="form-check-label") Active
-                                tr
-                                    td Super
-                                    td Admin
-                                    td superadmin
-                                    td superadmin@clp.com
-                                    td 20 November 2024
-                                    td
-                                        .d-flex.gap-3.user-action.justify-content-center.align-items-center
-                                            a.btn(href="#")
-                                                i.fa.fa-eye
-                                            button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
-                                                img(src='/assets/images/edit-03.png' alt='')
-                                            button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
-                                                img(src='/assets/images/trash-02.png' alt='')
-                                            .form-check 
-                                                input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
-                                                label(for="" class="form-check-label") Active
-                                tr
-                                    td Super
-                                    td Admin
-                                    td superadmin
-                                    td superadmin@clp.com
-                                    td 20 November 2024
-                                    td
-                                        .d-flex.gap-3.user-action.justify-content-center.align-items-center
-                                            a.btn(href="#")
-                                                i.fa.fa-eye
-                                            button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
-                                                img(src='/assets/images/edit-03.png' alt='')
-                                            button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
-                                                img(src='/assets/images/trash-02.png' alt='')
-                                            .form-check 
-                                                input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
-                                                label(for="" class="form-check-label") Active
-                                tr
-                                    td Super
-                                    td Admin
-                                    td superadmin
-                                    td superadmin@clp.com
-                                    td 20 November 2024
-                                    td
-                                        .d-flex.gap-3.user-action.justify-content-center.align-items-center
-                                            a.btn(href="#")
-                                                i.fa.fa-eye
-                                            button.btn.btn-link.p-0.editBtn(data-id='1' title='Edit' data-bs-toggle='modal' data-bs-target='#editDesignationModal')
-                                                img(src='/assets/images/edit-03.png' alt='')
-                                            button.btn.btn-link.p-0.delete(data-id='1' title='Delete' data-bs-toggle='modal' data-bs-target="#confirmDeleteModal")
-                                                img(src='/assets/images/trash-02.png' alt='')
-                                            .form-check 
-                                                input(type="checkbox" class="form-check-input" checked aria-label="Toggle Active Status for Super")
-                                                label(for="" class="form-check-label") Active
-
-                               
+                                    
 
 
 

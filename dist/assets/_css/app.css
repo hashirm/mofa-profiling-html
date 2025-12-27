@@ -12713,6 +12713,11 @@ div.dt-container .dt-info {
   transition: width 500ms ease;
   z-index: 99;
 }
+@media (max-width: 767.98px) {
+  .dashboard .history {
+    z-index: 1;
+  }
+}
 
 .dashboard .history .history-content {
   overflow: hidden;

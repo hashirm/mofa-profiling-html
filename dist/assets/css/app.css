@@ -214,6 +214,12 @@ p {
   margin-bottom: 1rem;
 }
 
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
 ol,
 ul {
   padding-left: 2rem;
@@ -289,13 +295,6 @@ svg {
 table {
   caption-side: bottom;
   border-collapse: collapse;
-}
-
-caption {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  color: var(--bs-secondary-color);
-  text-align: left;
 }
 
 th {
@@ -1526,14 +1525,6 @@ progress {
   border: 0 !important;
 }
 
-.border-top {
-  border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
-.border-bottom {
-  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
 .w-25 {
   width: 25% !important;
 }
@@ -1702,10 +1693,6 @@ progress {
 .bg-transparent {
   --bs-bg-opacity: 1;
   background-color: transparent !important;
-}
-
-.visible {
-  visibility: visible !important;
 }
 
 @media (min-width: 576px) {
@@ -2440,6 +2427,11 @@ div.dt-container .dt-info {
   transition: width 500ms ease;
   z-index: 99;
 }
+@media (max-width: 767.98px) {
+  .dashboard .history {
+    z-index: 1;
+  }
+}
 
 .dashboard .history .history-content {
   overflow: hidden;
@@ -2790,6 +2782,148 @@ header .notification-sec .notification .notification-box ul {
 .recent-searches.notification-box .notification-item .notif-action .notif-time {
   display: inline-block;
   width: 89px;
+}
+
+.main {
+  /* Rectangle 24065 */
+  width: 100%;
+  max-width: 4000px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.signIn-bg {
+  background: url(../images/signin-bg.png);
+  background-size: cover;
+}
+
+.signIn-content {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  .signIn-content {
+    padding: 0;
+    align-items: center;
+  }
+}
+.signIn-content .signIn-box {
+  width: 556px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box {
+    padding: 40px;
+  }
+}
+.signIn-content .signIn-box .signIn-header .logo-switcher {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box .signIn-header .logo-switcher {
+    flex-direction: row;
+    row-gap: 0px;
+    margin-bottom: 32px;
+  }
+}
+.signIn-content .signIn-box .signIn-header h1, .signIn-content .signIn-box .signIn-header .h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 12px;
+  color: rgb(13, 66, 97);
+}
+.signIn-content .signIn-box .signIn-header p {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box .signIn-header p {
+    margin-bottom: 32px;
+  }
+}
+.signIn-content .signIn-box form, .signIn-content .signIn-box label, .signIn-content .signIn-box input {
+  width: 100%;
+}
+.signIn-content .signIn-box form label {
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(27, 32, 36);
+  margin-bottom: 8px;
+}
+.signIn-content .signIn-box form .password-label {
+  position: relative;
+}
+.signIn-content .signIn-box form .password-label .showpassword-icon {
+  position: absolute;
+  inset-inline-end: 20px;
+  inset-block-start: 44px;
+  cursor: pointer;
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box form .password-label .showpassword-icon {
+    inset-block-start: 52px;
+  }
+}
+.signIn-content .signIn-box form input {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid rgb(208, 213, 221);
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box form input {
+    padding: 18px 16px;
+  }
+}
+.signIn-content .signIn-box form input:focus-visible {
+  border: 1px solid rgb(198, 75, 52);
+  outline: none;
+}
+.signIn-content .signIn-box form input::-moz-placeholder {
+  font-weight: 300;
+  font-size: 16px;
+  color: rgb(102, 112, 133);
+}
+.signIn-content .signIn-box form input::placeholder {
+  font-weight: 300;
+  font-size: 16px;
+  color: rgb(102, 112, 133);
+}
+.signIn-content .signIn-box form .submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signIn-content .signIn-box form .submit button {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 30px;
+  background-color: rgb(138, 21, 56);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+}
+@media (min-width: 576px) {
+  .signIn-content .signIn-box form .submit button {
+    padding: 19px 30px;
+  }
+}
+.signIn-content .signIn-box form .submit a {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
 }
 
 h1, .h1 {
